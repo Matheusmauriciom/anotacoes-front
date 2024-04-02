@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia CSS</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-css">
+<h2>Seletores Avançados</h2>
+<div class="box">
+<p>Aprofunde-se nos seletores CSS para segmentar elementos específicos e aplicar estilos de forma seletiva. Domine os seletores de classe, id, descendentes, filhos, irmãos, pseudo-classes e pseudo-elementos.
+</p>
+<ul>
+    <li>Estilização de pseudoclasses, como :hover e :focus</li>
+    <li>Estilização de pseudoelementos, como ::before e ::after</li>
+</ul>
+</div>
+
+    <!-- pseudo-classes -->
+    <div class="box">
+      <h2>Psedo-classes</h2>
+      <h3>:first-child/ :last-child / :nth-child</h3>
+      <p>
+        A pseudo-classe <code>:first-child</code> seleciona o primeiro elemento
+        filho de seu elemento pai, independentemente do tipo desse elemento. Ela
+        é aplicada ao primeiro filho de seu pai, não levando em consideração
+        seus irmãos.
+      </p>
+      <p>
+        A pseudo-classe <code>:last-child</code> seleciona o último elemento
+        filho de seu elemento pai, independentemente do tipo desse elemento. Ela
+        é aplicada ao último filho de seu pai, não levando em consideração seus
+        irmãos.
+      </p>
+      <p>
+        A pseudo-classe <code>:nth-child</code> seleciona um elemento com base
+        em sua posição em relação aos seus irmãos do mesmo tipo. Você pode usar
+        um número, uma expressão matemática ou palavras-chave como "odd" (ímpar)
+        ou "even" (par) para definir o padrão de seleção.
+      </p>
+      <pre>
+    <code>
+p:first-child{
+color: red;
+}
+p:last-child {
+color: red;
+} 
+p:nth-child(4){
+background-color: black;
+}      
+    </code>
+  </pre>
+  <!-- first-of-type/ :last-of-type / :nth-of-type -->
+      <h3>:first-of-type/ :last-of-type / :nth-of-type:</h3>
+      <p>
+        pseudo-classe <code>:first-of-type</code> seleciona o primeiro elemento
+        de um determinado tipo dentro do seu elemento pai. Ela é aplicada ao
+        primeiro elemento do tipo especificado, independentemente de sua posição
+        em relação a outros elementos do mesmo tipo.
+      </p>
+      <p>
+        A pseudo-classe <code>:last-of-type </code>seleciona o último elemento
+        de um determinado tipo dentro do seu elemento pai. Ela é aplicada ao
+        último elemento do tipo especificado, independentemente de sua posição
+        em relação a outros elementos do mesmo tipo.
+      </p>
+      <p>
+        A pseudo-classe <code>:nth-of-type</code> seleciona um elemento com base
+        em sua posição em relação aos seus irmãos do mesmo tipo dentro do seu
+        elemento pai. Assim como :nth-child, você pode usar um número, uma
+        expressão matemática ou palavras-chave como "odd" (ímpar) ou "even"
+        (par) para definir o padrão de seleção.
+      </p>
+      <pre>
+        <code>
+/* sempre vou pegar, independente */
+p:first-of-type{
+    background-color: green;
+}
+p:last-of-type{
+    background-color: gray;
+}
+p:nth-of-type(2){
+    background-color: black;
+}
+        </code>
+      </pre>
+    </div>
+
+    <div class="box">
+      <h2>Pseu do elemento</h2>
+    </div>
+<script src="/prism/prism.js"></script>
+</body>
+</html>

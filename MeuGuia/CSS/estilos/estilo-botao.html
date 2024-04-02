@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia CSS</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-css">
+
+     <h2>Estilização de Botões.</h2>
+  <div class="box">
+    <p>Esses elementos são amplamente utilizados em interfaces web, portanto, entender como estilizá-los de forma eficaz e atraente é importante.</p>
+  </div>
+
+  <div class="box">
+     <h3>Estilização de Botões</h3>
+  <ul>
+    <li>Personalização de estilos para botões, incluindo cores, tamanhos e efeitos de hover</li>
+    <li>Criação de botões com diferentes estilos, como botões de call-to-action ou botões de alternância</li>
+    <li>Utilização de pseudo-classes para estilizar botões em diferentes estados</li>
+  </ul>
+  </div>
+
+  <div class="box">
+  <h3>Botão na vertical</h3>
+  <pre>
+    <code>
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    height: 300px;
+}
+
+.box__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    padding: 10px;
+    background-color: #ccc;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 10px;
+}
+    </code>
+  </pre>
+</div>
+
+<!-- Estilização de links -->
+
+<div class="box">
+  <h2>Estilização de links</h2>
+  <pre>
+    <code>
+      seletor específico:
+      a.botao1{
+        background: red;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        border: 2px solid black;
+        border-radius:5px;
+      }
+    </code>
+  </pre>
+
+  <!-- Hover -->
+  <h3>Hover</h3>
+  <pre>
+    <code>
+      a.botao1:hover{
+        background: white;
+        color: black;
+        padding: 12px;
+      }
+    </code>
+  </pre>
+</div>
+
+<script src="/prism/prism.js"></script>
+</body>
+</html>

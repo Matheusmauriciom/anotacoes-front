@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classe</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="/JS/style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-javascript">
+      <h2>Classes e Programação Orientada a Objetos</h2>
+
+  <div class="box">
+     <ul>
+      <li>
+        Introdução aos conceitos de classes, objetos, herança e encapsulamento
+      </li>
+      <li>Utilização de classes para modelar e organizar o código</li>
+      <li>Definição de propriedades e métodos em classes</li>
+      <li>Herança e polimorfismo em JavaScript</li>
+            <li>
+        Utilização de técnicas de POO para organizar e estruturar o código
+      </li>
+      <li>Criação de objetos e utilização de métodos e propriedades</li>
+    </ul>
+  </div>
+  <div class="box">
+
+    <pre>
+      <code>
+/*  Uma classe é uma estrutura que define um tipo de objeto, especificando seus atributos e métodos. 
+Ela serve como um modelo ou plano para criar objetos específicos, que são chamados de instâncias da classe. (fabrica, molde) */
+
+class Carro {
+    constructor(valor1, valor2, valor3){
+        this.marca = valor1;
+        this.modelo =valor2;
+        this.ano = valor3;
+    }
+    buzina (){
+        return this.modelo+" buzinou: fon"
+    }
+}
+
+const uno = new Carro ("Fiat", "uno" ,2001);
+const gol = new Carro ("Volks", "Gol", 2013);
+console.log(uno.buzina()); // uno buzinou: fon
+console.log(uno.ano); // 2001
+      </code>
+    </pre>
+<h3>Pessoa</h3>
+<pre>
+  <code>
+class Pessoa {
+    constructor(nome, idade, sexo){
+        this.nome = nome;
+        this.idade = idade;
+        this.sexo =sexo;
+    }
+    descricao (){
+      console.log(`meu nome é ${this.nome}, tenho ${this.idade} anos e meu sexo é ${this.sexo}`)
+    }
+}
+const pessoa1 = new Pessoa ("Matheus", 100, "masculino");
+pessoa1.descricao(); // Saída : meu nome é Matheus, tenho 100 anos e meu sexo é masculino
+  </code>
+</pre>
+  </div>
+
+ 
+<script src="/prism/prism.js"></script>
+
+
+</body>
+</html>

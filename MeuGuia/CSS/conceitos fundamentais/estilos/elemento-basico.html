@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia CSS</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-css">
+<h2>Elementos Básicos</h2>
+
+
+<div class="box">
+  <h3>box model</h3>
+  <p>Compreender o Box Model é fundamental, Ele define como os elementos HTML são renderizados como caixas, incluindo as propriedades de margem, borda, preenchimento e conteúdo.</p>
+</div>
+<!-- Background -->
+<div class="box">
+<h2>Background</h2>
+<h3>Cor de fundo</h3>
+<p>O <code>background-color</code> é uma propriedade especifica a cor de fundo de um elemento.</p>
+<code>
+  body {
+  background-color: lightblue;
+}
+</code>
+
+<!-- background-image -->
+<h3>Background-image</h3>
+<p>O <code>background-image</code> é uma propriedade especifica uma imagem a ser usada como plano de fundo de um elemento.Por padrão, a imagem é repetida para cobrir todo o elemento.</p>
+<pre>
+  <code>
+    background-color: gray url("../img/exemplo.jpg") no-repeat center;
+    background-size:cover;
+
+Propriedades abreviadas:
+background-color
+background-image
+background-repeat
+background-attachment
+background-position
+Não importa se um dos valores da propriedade está faltando, desde que os outros estejam nesta ordem
+  </code>
+</pre>
+</div>
+
+<!-- Border -->
+
+<div class="box">
+  <h2>Border</h2>
+  <pre>
+    <code>
+      border: solid 2px black;
+      border-radius: 10px; //Propriedade para deixar a borda arredondada.
+
+      border-top: 5px solid red;
+      border-right: 5px solid blue;
+      border-bottom: 5px solid green;
+      border-left: 5px solid yellow;
+    </code>
+  </pre>
+</div>
+
+<!-- Margin -->
+<div class="box">
+  <h2>Margin</h2>
+  <pre>
+    <code>
+      margin-top: 1px;
+      margin-right: 2px;
+      margin-bottom: 3px;
+      margin-left: 4px;
+
+      margin: 1px 2px 3px 4px;
+    </code>
+  </pre>
+</div>
+
+<!-- Padding -->
+<div class="box">
+  <h2>Padding</h2>
+  <p>Preenchimento para dentro, usado para editar botão</p>
+  <pre>
+    <code>
+      padding-top: 10px;
+      padding-right: 20px;
+      padding-bottom: 30px;
+      padding-left: 40px;
+
+      padding: 10px 20px 30px 40px;
+    </code>
+  </pre>
+</div>
+
+<!-- Propriedade Width e Height -->
+<div class="box">
+  <h2>Propriedade Width e Height</h2>
+  <pre>
+    <code>
+      width:100px; largura
+      heigt:150px; altura
+
+      max-width: 800px; maximo
+      min-height: 200px; minimo
+    </code>
+  </pre>
+</div>
+
+<!-- Text Aling -->
+<div class="box">
+  <h2>Text Aling</h2>
+  <p>Alinhamento de texto.</p>
+  <pre>
+    <code>
+
+      text-aling: center;
+      text-aling: justify;
+
+      text-decoration: none; // usado em links
+      text-transform: uppercase // letra maiscula
+      text-indent: 40px; // recuo de linha (paragrafo)
+      
+      word-spacing: 5px; // espaçamento de palavras
+      letter-spacing:5px; // espaçamentod e letras
+      line-height: 0.8; // espaçamento entre linhas
+    </code>
+  </pre>
+</div>
+
+<!-- Fonts -->
+<div class="box">
+  <h2>Fonts</h2>
+  <p>Shorthand você pode usar a propriedade <code>font</code> para definir várias características da fonte em uma única declaração. </p>
+  <pre>
+    <code>
+ font: [font-style] [font-variant] [font-weight] [font-size]/[line-height] [font-family];
+
+ font: [font-weight] [font-size] [font-family];
+ p {
+  font: bold 16px Arial, sans-serif;
+}
+
+
+font-style: Define o estilo da fonte (normal, itálico ou oblíquo).
+font-variant: Define a variante da fonte (normal ou small-caps).
+font-weight: Define a espessura da fonte (normal, negrito ou valores numéricos).
+font-size: Define o tamanho da fonte (valor numérico seguido de uma unidade de medida).
+line-height: Define a altura da linha (valor numérico seguido de uma unidade de medida ou um valor adimensional).
+font-family: Define a família da fonte (nome da fonte ou uma lista de fontes em ordem de preferência).    
+    </code>
+  </pre>
+
+    <!-- Card 1: Importação de fontes do Google -->
+  <h3>Importação de fontes do google</h3>
+  <p>Fonte do <a target="_blank" href="https://fonts.google.com/">Google Fonts</a> importar o link para o <span class="uppercase"><code>head</code></span> do arquivo html e difinir o <code>font-family: 'Roboto', sans-serif;</code></p>
+</div> 
+
+<script src="/prism/prism.js"></script>
+</body>
+</html>

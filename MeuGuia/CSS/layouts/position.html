@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia CSS</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-css">
+  <h2>CSS Position</h2>
+
+  <div class="box">
+    <p>A propriedade Position ajuda a manipular a localização / posicionamentodo do elemento na minha página.</p>
+    <ul>
+      <li>position: static; (padrão)</li>
+      <li>position: relative;</li>
+      <li>position: absolute;</li>
+      <li>position: fixed; (fixo a página)</li>
+      <li>position: sticky; (ao usar o scroll o elemento acompanha). top:0 obrigatorio</li>
+      <li>z-index</li>
+    </ul>
+    <p><strong>top, right, bottom e left.</strong></p>
+  </div>
+
+  <div class="box">
+    <h3>Relative</h3>
+    <p> Ao aplicar position: relative a um elemento, ele permanecerá dentro do fluxo normal da página, mas você pode ajustar sua posição usando as propriedades <strong>top, right, bottom e left.</strong></p>
+    <p>Ele é o "pai" do absolute, referência</p>
+  </div>
+
+  <div class="box">
+    <h3>Absolute</h3>
+    <p>Permite posicionar um elemento livremente em relação ao seu elemento pai mais próximo com uma posição definida.</p>
+
+    <pre>
+    <code class="language-html">
+    &lt;div class="container"&gt;
+      &lt;img src="#" alt="#"&gt;
+      &lt;h3&gt;Exemplo&lt;/h3&gt;
+    &lt;/div&gt;
+      </code>
+    </pre>
+    
+
+    <pre>
+      <code>
+        .container{
+          width: 300px;
+          height: 300px
+          postion: relative;
+        }
+
+        .container img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .container h3{
+          font-size: 40px;
+          font-wight: 500;
+          margin: 0;
+          postion: absolute;
+          top: 50%;
+          left: 10%;
+        }
+      </code>
+    </pre>
+  </div>
+
+  <div class="box">
+    <h3>z-index</h3>
+    <p>A propriedade CSS z-index é usada para controlar a ordem de empilhamento dos elementos posicionados, ou seja, determina qual elemento deve aparecer acima ou abaixo dos outros quando há sobreposição. Ela é aplicada a elementos que tenham uma posição definida <code>(position: absolute, position: relative ou position: fixed)</code>.</p>
+    <p>Em resumo, o z-index é usado para controlar a ordem de empilhamento dos elementos posicionados, permitindo que você determine quais elementos devem aparecer acima ou abaixo dos outros quando há sobreposição. É uma propriedade útil para controlar a aparência visual e a camada de elementos em um layout.
+    </p>
+  </div>
+<script src="/prism/prism.js"></script>
+</body>
+</html>

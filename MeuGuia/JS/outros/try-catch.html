@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia JS</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="/JS/style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-javascript">
+    <h2>Try-catch</h2>
+    <div class="box">
+      <ul>
+      <li>Conceitos de tratamento de erros e exceções em JavaScript</li>
+      <li>Utilização de blocos try-catch para capturar e tratar exceções</li>
+      <li>Lançamento de exceções personalizadas</li>
+      <li>Estratégias de manipulação de erros e técnicas de depuração</li>
+    </ul>
+    </div>
+    <div class="box">
+        <pre>
+            <code>
+/* O objetivo do try-catch é capturar erros que possam ocorrer em um trecho de código específico e fornecer uma forma de tratá-los ou lidar com eles de maneira controlada. */
+
+try {
+    // Bloco de código que pode gerar erros
+  } catch (erro) {
+    // Bloco de código para tratar o erro
+  }
+
+  /*O try-catch pode ser combinado com a cláusula finally, 
+  que é opcional e pode ser usada para definir um bloco de código que será executado independentemente de ocorrer ou não uma exceção. 
+  O bloco finally é útil para liberar recursos ou realizar tarefas de limpeza que devem ser feitas, independentemente de haver um erro ou não. */
+
+  try {
+    // Bloco de código que pode gerar erros
+  } catch (erro) {
+    // Bloco de código para tratar o erro
+  } finally {
+    // Bloco de código que será executado sempre
+  }
+            </code>
+        </pre>
+    </div>
+<script src="/prism/prism.js"></script>
+</body>
+</html>

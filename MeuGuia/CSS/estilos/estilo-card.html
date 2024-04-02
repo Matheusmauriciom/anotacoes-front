@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia CSS</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-css">
+
+     <h2>Estilização de Cards</h2>
+  <div class="box">
+    <p>Esses elementos são amplamente utilizados em interfaces web, portanto, entender como estilizá-los de forma eficaz e atraente é importante.</p>
+  </div>
+
+  <div class="box">
+     <h3>Estilização de Cards</h3>
+  <ul>
+    <li>Criação de cards com diferentes estilos, como cartões de produtos, cartões de perfil ou cartões de artigos</li>
+    <li>Personalização de layout, cores e efeitos de transição</li>
+    <li>Utilização de técnicas de posicionamento e alinhamento para criar grids de cards responsivos</li>
+  </ul>
+  </div>
+
+  <!-- Texto truncado -->
+<div class="box">
+  <h2>Texto truncado</h2>
+  <p>O texto truncado é uma técnica que consiste em exibir apenas uma parte do texto em um elemento, ocultando o restante que excede o espaço disponível. Isso é útil em situações onde o espaço é limitado e deseja-se fornecer uma indicação visual de que há mais informação além do que está sendo mostrado.</p>
+  <p>A técnica é comumente implementada utilizando as propriedades <code>white-space: nowrap</code>, <code>overflow: hidden</code> e <code>text-overflow: ellipsis</code>.</p>
+  <pre>
+    <code>
+.container {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card{
+  height: auto;
+  width: 40%;
+  background: white;
+  text-aling: center;
+}
+
+.card:hover .container{
+  white-space: normal;
+}
+    </code>
+  </pre>
+</div>
+
+<div class="box">
+  <!-- box-shadow -->
+  <h3>box-shadow</h3>
+  <p>Ela permite controlar a aparência da sombra, como cor, desfoque, deslocamento horizontal e vertical e o tamanho do espalhamento.</p>
+  <p><code>horizontal-offset</code> define o deslocamento horizontal da sombra em relação ao elemento.</p>
+  <p><code>vertical-offset</code> define o deslocamento vertical da sombra em relação ao elemento.</p>
+  <p><code>blur-radius></code> define o desfoque da sombra. Quanto maior o valor, mais suave será a sombra.</p>
+  <p><code>spread-radius</code> define o tamanho do espalhamento da sombra. Valores positivos aumentam o tamanho e valores negativos diminuem.</p>
+  <p><code>color</code> define a cor da sombra.</p>
+  <pre>
+    <code>
+       /* Exemplo padrão de card */
+.box {
+  width: 40%;
+  height: 300px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+    </code>
+  </pre>
+</div>
+<script src="/prism/prism.js"></script>
+</body>
+</html>

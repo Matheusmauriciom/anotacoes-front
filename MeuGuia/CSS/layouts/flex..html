@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css" />
+    <meta name="author" content="Matheus Mauricio" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia CSS</title>
+    <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/prism/prism.css" />
+    <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="language-css">
+    <h2>Display Flex</h2>
+
+    <!-- Flex-box -->
+    <div class="box">
+      <h2>flex-box</h2>
+      <p>
+        O Flexbox é um módulo completo e não uma única propriedade; algumas
+        delas devem ser declaradas no container (o elemento-pai, que chamamos de
+        flex container), enquanto outras devem ser declaradas nos
+        elementos-filhos (os flex itens).
+      </p>
+      <h3>Elemento pai (Contêiner)</h3>
+      <p>
+        <strong>Flex container</strong> é o elemento que envolve sua estrutura.
+        Você define que um elemento é um Flex Container com a propriedade
+        <code>display</code> e valores <code>flex</code> ou
+        <code>inline-flex</code>.
+      </p>
+
+      <!-- arrumar -->
+      <p>As propriedades do flex container são:</p>
+      <ul>
+        <li>flex-direction</li>
+        <li>flex-wrap</li>
+        <li>flex-flow</li>
+        <li>justify-content</li>
+        <li>align-items</li>
+        <li>align-content</li>
+      </ul>
+
+      <pre class="language-html">
+  <code>
+&lt;div class="flex-container"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div&gt;2&lt;/div&gt;
+  &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+  </code>
+</pre>
+
+      <pre>
+  <code>
+.flex-container {
+    display: flex;
+  }
+  </code>
+</pre>
+      <p><strong>Flex Item</strong> são elementos-filhos do flex container.</p>
+      <p>
+        <strong>Eixos ou Axes</strong> são as duas direções básicas que existem
+        em um Flex Container: main axis, ou eixo principal, e cross axis, ou
+        eixo transversal.
+      </p>
+    </div>
+
+    <!-- Flex Direction -->
+    <div class="box">
+      <h2>flex Direction</h2>
+      <img src="/CSS/img/flex-direction.png" alt="">
+      <p>Estabelece o eixo principal, definindo assim a direção em que os <code>flex items</code> são alinhados no flex container.</p>
+      <pre>
+        <code>
+ .flex-container {
+    flex-direction: row | row-reverse | column | column-reverse;
+  }
+
+  row: esquerda para a direita (padrão)
+  row-reverse: direita para a esquerda
+  column: mesmo que row, mas de cima para baixo
+  column-reverse: mesmo que row-reverse mas de baixo para cima
+        </code>
+      </pre>
+    </div>
+
+<!-- Flex Wrap -->
+<div class="box">
+  <h2>flex-wrap</h2>
+  <img src="/CSS/img/flex-wrap.png" alt="">
+  <p>Por padrão, os <code>flex items</code> vão todos tentar se encaixar em uma só linha.Com esta propriedade você pode modificar esse comportamento e permitir que os ítens quebrem para uma linha seguinte conforme for necessário.</p>
+  <pre>
+    <code>
+.flex-container {
+    flex-wrap: nowrap | wrap | wrap-reverse;
+  }
+
+  nowrap: todos os flex items ficarão em uma só linha (padrão)
+  wrap: os flex items vão quebrar em múltiplas linhas, de cima para baixo
+  wrap-reverse: os flex items vão quebrar em múltiplas linhas de baixo para cima     
+    </code>
+  </pre>
+</div>
+
+<!-- Flex-flow -->
+<div class="box">
+  <h2>flex-flow</h2>
+  <p>A propriedade <strong>flex-flow</strong> é uma propriedade shorthand (uma mesma declaração inclui vários valores relacionados a mais de uma propriedade) que inclui <code>flex-direction</code> e <code>flex-wrap</code>. Determina quais serão os eixos pricipal e transversal do container. O valor padrão é <code>row nowrap</code>.</p>
+  <pre>
+    <code>
+ .flex-container {
+    flex-flow: row nowrap | row wrap | column nowrap | column wrap;
+  }     
+    </code>
+  </pre>
+</div>
+
+<!-- Justify-content -->
+<div class="box">
+  <h2>justify-content</h2>
+  <img src="/CSS/img/justify-content.png" alt="">
+  <p>É uma propriedade que influencia o alinhamento dos itens flexíveis ao longo do eixo principal, controla a distribuição do espaço livre no container e define o comportamento dos itens quando ultrapassam o limite da linha.</p>
+  <pre>
+    <code>
+.flex-container {
+    justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+  }
+
+flex-start: Alinha os itens junto à borda de início de acordo com a direção flexível do container. (padrão)
+flex-end: Alinha os itens junto à borda final de acordo com a direção flexível do container.
+
+start: Alinha os itens junto à borda de início da direção do writing-mode. (modo de escrita).
+end: Alinha os itens junto à borda final da direção do writing-mode. (modo de escrita).
+left: Alinha os itens junto à borda esquerda do container, ou se comporta como start.
+right: Alinha os itens junto à borda direita do container, ou se comporta como start.
+center: Centraliza os itens na linha.
+
+space-between: Distribui os itens igualmente ao longo da linha, com o primeiro item junto à borda inicial e o último item junto à borda final.
+space-around: Distribui os itens com o mesmo espaçamento entre eles, incluindo as bordas.
+space-evenly: Distribui os itens de forma que o espaçamento entre eles e as bordas seja igual.
+    </code>
+  </pre>
+</div>
+
+<!-- Aling-items -->
+<div class="box">
+  <h2>aling-items</h2>
+<img src="/CSS/img/aling-itens.png" alt="">
+<p><code>align-items</code> é uma propriedade usada para alinhar os itens flexíveis.(itens em nivel individual).</p>
+<pre>
+  <code>
+.flex-container {
+    align-items: stretch | flex-start | flex-end | center | baseline;
+  }
+  stretch: estica os ítens para preencher o container, respeitando o min-width/max-width). (padrão)
+
+  flex-start:/ start:/ self-start: ítens são posicionados no início do eixo transversal. 
+  A diferença entre eles é sutil e diz respeito às regras de flex-direction ou writing-mode.
+  
+  center: ítens são centralizados no eixo transversal.
+  baseline: ítens são alinhados de acordo com suas baselines.
+  </code>
+</pre>
+</div>
+
+<!-- align-content -->
+<div class="box">
+  <h2>align-content</h2>
+  <img src="/CSS/img/aling-content.png" alt="">
+  <p>O <code>align-content</code> é uma propriedade usada para alinhar as linhas flexíveis.(pega o bloco inteiro)</p>
+  <p>Organiza as linhas dentro de um flex container quando há espaço extra no eixo transversal, similar ao modo como justify-content alinha ítens individuais dentro do eixo principal.</p>
+  <p><strong>Importante:</strong> Esta propriedade não tem efeito quando há somente uma linha de flex items no container.</p>
+  <pre>
+    <code>
+flex-container {
+    align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+  }
+
+flex-start: / start: ítens alinhados com o início do container.
+flex-start se guia pela flex-direction, enquanto start se guia pela direção do writing-mode.
+
+flex-end: / end: ítens alinhados com o final do container.
+flex-end: se guia pela flex-direction, enquanto end se guia pela direção do writing-mode.
+
+center: ítens centralizados no container.
+space-between: ítens distribuídos igualmente; a primeira linha junto ao início do container e a última linha junto ao final do container.
+space-around: ítens distribuídos igualmente com o mesmo espaçamento entre cada linha.
+space-evenly: ítens distribuídos igualmente com o mesmo espaçamento entre eles.
+stretch: ítens em cada linha esticam para ocupar o espaço remanescente entre elas.(padrão)
+    </code>
+  </pre>
+</div>
+
+<!-- Propriedades para elementos-filhos -->
+<div class="box">
+  <h2>Propriedades para elementos-filhos</h2>
+  <pre>
+    <code class="language-html">
+&lt;div class="flex-container"&gt;
+  &lt;div class="flex-item"&gt;1&lt;/div&gt;
+  &lt;div class="flex-item"&gt;2&lt;/div&gt;
+  &lt;div class="flex-item"&gt;3&lt;/div&gt;
+&lt;/div&gt;   
+    </code>
+  </pre>
+  <p>Isso significa que, onde existe um elemento-pai com propriedade flex (o flex-container), é possível atribuir propriedades flex específicas também para as elementos-filhos (flex-item).</p>
+  <p>Você pode definir as propriedades abaixo para apenas um dos elementos-filhos através de um identificador, como uma classe específica.</p>
+  <h3>Order</h3>
+  <p>Determina a ordem em que os elementos aparecerão.</p>
+  <img src="/CSS/img/order.png" alt="">
+  <pre>
+    <code>
+  .flex-item {
+    order: <número>; /* o valor padrão é 0 */
+  }      
+    </code>
+  </pre>
+</div>
+
+<!-- Flex-grow -->
+<div class="box">
+  <h3>flex-grow (filho)</h3>
+  <img src="/CSS/img/flex-grow.png" alt="">
+  <p>Define a habilidade de um flex item de crescer, caso necessário. O valor dessa propriedade é um valor numérico sem indicação de unidade, que serve para cálculo de proporção. Este valor dita a quantidade de espaço disponível no container que será ocupado pelo item.</p>
+  <p>Se todos os ítens tiverem flex-grow definido em 1, o espaço remanescente no container será distribuído de forma igual entre todos. Se um dos ítens tem o valor de 2, vai ocupar o dobro de espaço no container com relação aos outros (ou pelo menos vai tentar fazer isso).</p>
+  <pre>
+    <code>
+  .flex-item {
+    flex-grow: (numero); /* o valor default(padrão) é 0 */
+  }      
+    </code>
+  </pre>
+</div>
+
+<!-- flex-shrink -->
+<div class="box">
+  <h3>flex-shrink (filho)</h3>
+  <p>Define a habilidade de um flex item de encolher, caso necessário.</p>
+  <pre>
+    <code>
+  .flex-item {
+    flex-shrink: <número>; /* o valor padrão é 0 */
+  }      
+    </code>
+  </pre>
+</div>
+
+<!-- flex-basis -->
+<div class="box">
+  <h3>flex-basis</h3>
+  <p>Define o tamanho padrão para um elemento antes que o espaço remanescente do container seja distribuído. Pode ser um comprimento (por exemplo, 20%, 5rem, etc) ou uma palavra-chave. A palavra-chave <code>auto</code> significa "observe minhas propriedades de altura ou largura" (o que era feito pela palavra-chave <code>main-size</code>, que foi depreciada). A palavra-chave <code>content</code> significa "estabeleça o tamanho com base no conteúdo interno do ítem" - essa palavra-chave ainda não tem muito suporte, então não é fácil de ser testada, assim como suas relacionadas: max-content, min-content e fit-content.</p>
+  <pre>
+    <code>
+      .flex-item {
+    flex-basis: flex-basis:  | auto; /* o valor padrão é auto */
+  }
+    </code>
+  </pre>
+</div>
+
+<!-- flex -->
+<div class="box">
+  <h3>flex</h3>
+  <p>Esta é a propriedade shorthand para <code>flex-grow</code>, <code>flex-shrink</code> e <code>flex-basis</code>, combinadas. O segundo e terceiro parâmetros (<code>flex-shrink</code> e <code>flex-basis</code> ) são opcionais. O padrão é <code>0 1 auto</code>, mas se você definir com apenas um número, é equivalente a <code>0 1</code>.</p>
+  <pre>
+    <code>
+   .item {
+    flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+  }     
+    </code>
+  </pre>
+  <p><strong>É recomendado que você utilize esta propriedade shorthand </strong>ao invés de definir cada uma das propriedades em separado. O shorthand define os outros valores de forma inteligente.</p>
+</div>
+
+<!-- aling-self -->
+<div class="box">
+  <h3>aling-self</h3>
+<img src="/CSS/img/aling-self.png" alt="">
+<p>Permite que o alinhamento padrão (ou o que estiver definido por align-items) seja sobrescrito para ítens individuais.</p>
+<pre>
+  <code>
+  .item {
+    align-self: auto | flex-start | flex-end | center | baseline | stretch;
+  }    
+  </code>
+</pre>
+</div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <script src="/prism/prism.js"></script>
+  </body>
+</html>

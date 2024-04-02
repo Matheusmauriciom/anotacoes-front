@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia CSS</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-css">
+<h2>Seletores básicos</h2>
+<div class="box">
+    <ul>
+        <li>Introdução aos seletores CSS básicos.</li>
+        <li>Aplicação de estilos a elementos específicos.</li>
+        <li>Utilização de classes e IDs para seleção e estilização.</li>
+    </ul>
+</div>
+
+<!-- Seletores e classes -->
+
+<div class="box">
+  <h3>Seletores e classe</h3>
+  <p>Seletor de elemento: Seleciona elementos com base em seu nome de tag.</p>
+  <code>
+    p {
+  color: blue;
+}
+  </code>
+  <h3>Seletor de classe</h3>
+  <p>Seletor de classe: Seleciona elementos com base no valor do atributo <code>class</code>.</p>
+  <code class="language-html">&lt;p class="destaque"&gt;Este é um parágrafo destacado.&lt;/p&gt;</p>
+</code>
+<p>
+  <code>.destaque {
+  font-weight: bold;
+  color: red;
+}</code>
+</p>
+<p>Nesse exemplo, o parágrafo com a classe "destaque" teria o texto em negrito e na cor vermelha</p>
+
+<!-- Seletores de ID -->
+
+<h3>Seletores de ID</h3>
+<p>Seleciona um elemento específico com base no valor do atributo id. O valor do ID deve ser único na página, ou seja, não pode haver outros elementos com o mesmo <span class="uppercase">id</span></p>
+<code class="language-html">
+  &lt;p id="meu-paragrafo"&gt;Este é o meu parágrafo.&lt;/p&gt;
+</code>
+<p>
+  <code>
+  #meu-paragrafo {
+  background-color: yellow;
+}
+</code>
+</p>
+<p>Nesse exemplo, o parágrafo com o ID "meu-paragrafo" teria um fundo amarelo.</p>
+</div>
+
+<!-- Especificidade CSS -->
+<div class="box">
+  <h2>Especificidade</h2>
+  <p>É uma forma de determinar quais estilos serão aplicados a um elemento quando várias regras de estilo conflitam.</p>
+  <pre>
+    <code>
+    /* 1 - Seletor de ID (#myElement) */
+    #myElement {
+      color: green;
+    }
+
+    /* 2 - Tag + class  */
+    tag.myClass {
+      color: blue;
+    }
+
+    /* 3 - Seletor de classe (.myClass) */
+    .myClass {
+      color: orange;
+    }
+
+    /* Regra 4 - Seletor de elemento (p) */
+    p {
+      color: red;
+    }      
+    </code>
+  </pre>
+</div>
+
+    <div class="box">
+      <!-- Seletor de tipo -->
+      <p>1. Seletor de tipo:</p>
+      <code>
+        p { /* Estilos aplicados a todos os elementos p (parágrafos) */ }
+      </code>
+    </div>
+
+    <!-- Seletor de classe -->
+    <div class="box">
+      <p>2. Seletor de classe:</p>
+      <code
+        >.destaque { /* Estilos aplicados a todos os elementos com a classe
+        "destaque" */ }
+      </code>
+    </div>
+
+    <!-- Seletor de ID -->
+    <div class="box">
+      <p>3. Seletor de ID</p>
+      <code
+        >#cabecalho { /* Estilos aplicados a um elemento com o ID "cabecalho" */
+        }
+      </code>
+    </div>
+
+    <!-- Seletor de descendência -->
+    <div class="box">
+      <p>4. Seletor de descendência:</p>
+      <code
+        >div p { /* Estilos aplicados a todos os elementos p que estão dentro de
+        um elemento div */ }
+      </code>
+    </div>
+
+    <!-- Seletor de filho direto  -->
+    <div class="box">
+      <p>5 .Seletor de filho direto:</p>
+      <code
+        >ul > li { /* Estilos aplicados a todos os elementos li que são filhos
+        diretos de uma lista não ordenada ul */ }
+      </code>
+    </div>
+
+    <!-- Seletor de irmão adjacente -->
+    <div class="box">
+      <p>6. Seletor de irmão adjacente:</p>
+      <code
+        >h2 + p { /* Estilos aplicados a todos os elementos p que são irmãos
+        adjacentes de um elemento h2 */ }
+      </code>
+    </div>
+
+    <!-- Seletor de irmãos subsequentes -->
+    <div class="box">
+      <p>7. Seletor de irmãos subsequentes:</p>
+      <code
+        >h2 ~ p { /* Estilos aplicados a todos os elementos p que são irmãos
+        subsequentes de um elemento h2 */ }
+      </code>
+    </div>
+
+    <!-- not -->
+    <div class="box">
+      <p>8. Seletor :not</p>
+      <code
+        >p:not(.destaque) { /* Estilos aplicados a todos os elementos p que NÃO
+        têm a classe "destaque" */ }
+      </code>
+    </div>
+
+    
+
+    <!-- Seletor de atributo -->
+   
+      <h2>Seletores de atributo</h2>
+  
+
+    <!-- seletor de atributo de início -->
+    <div class="box">
+      <h3>Seletor de atributo de início</h3>
+      <p>
+        Ele é usado para selecionar elementos que possuem um determinado
+        atributo e cujo valor começa com um determinado texto específico.
+      </p>
+      <p>
+        <strong>atributo:</strong> É o nome do atributo que você deseja
+        selecionar.
+      </p>
+      <p>
+        <strong>^=</strong> É o operador que indica que o valor do atributo deve
+        começar com o texto especificado.
+      </p>
+      <p>
+        <strong>"valor"</strong>É o valor que você deseja que o atributo comece.
+      </p>
+      <code>a[href^="https://"] </code>
+      <pre class="language-html"><code>
+&lt;a href="https://www.exemplo.com"&gt;Exemplo&lt;/a&gt;
+&lt;a href="https://www.outroexemplo.com"&gt;Outro Exemplo&lt;/a&gt;
+&lt;a href="http://www.nao-sera-selecionado.com"&gt;Não Será Selecionado&lt;/a&gt;
+</code></pre>
+      <p class="language-html">
+        No exemplo acima, o seletor <code>a[href^="https://"] </code>selecionará
+        os dois primeiros links, pois seus atributos href começam com
+        <code>"https://"</code>.
+      </p>
+      <p class="language-html">
+        O terceiro link não será selecionado, pois seu atributo href começa com
+        <code>"http://"</code>.
+      </p>
+
+      <p class="language-html">
+        O seletor de atributo de início é útil quando você deseja selecionar
+        elementos com base nos valores iniciais de seus atributos. Ele permite
+        que você aplique estilos específicos apenas a elementos que atendam a
+        esse critério.
+      </p>
+            <code
+        >a[href="https://www.exemplo.com"] { /* Estilos aplicados a links com o
+        atributo href definido como "https://www.exemplo.com" */ }
+      </code>
+    </div>
+
+    <!-- seletor de atributo final -->
+    <div class="box">
+      <h3>Seletor de atributo de final</h3>
+      <p>
+        Ele é usado para selecionar elementos que possuem um determinado
+        atributo e cujo valor termina com um determinado texto específico.
+      </p>
+      <p>
+        <strong>atributo:</strong> É o nome do atributo que você deseja
+        selecionar.
+      </p>
+      <p>
+        <strong>$=</strong> É o operador que indica que o valor do atributo deve
+        terminar com o texto especificado.
+      </p>
+      <p>
+        <strong>"valor"</strong> É o valor que você deseja que o atributo
+        termine.
+      </p>
+      <code>img[src$=".png"] </code>
+      <pre class="language-html"><code>
+&lt;img src="imagem1.png" alt="Imagem 1"&gt;
+&lt;img src="imagem2.jpg" alt="Imagem 2"&gt;
+&lt;img src="imagem3.png" alt="Imagem 3"&gt;
+</code></pre>
+      <p class="language-html">
+        No exemplo acima, o seletor <code>img[src$=".png"]</code> selecionará as
+        imagens "imagem1.png" e "imagem3.png", pois seus atributos src terminam
+        com ".png"
+      </p>
+      <p>
+        A imagem "imagem2.jpg" não será selecionada, pois seu atributo src não
+        termina com ".png".
+      </p>
+      <p>
+        O seletor de atributo de final é útil quando você deseja selecionar
+        elementos com base nos valores finais de seus atributos. Ele permite que
+        você aplique estilos específicos apenas a elementos que atendam a esse
+        critério.
+      </p>
+    </div>
+
+<script src="/prism/prism.js"></script>
+</body>
+</html>

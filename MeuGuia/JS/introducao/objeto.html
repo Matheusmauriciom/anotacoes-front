@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="/JS/style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-javascript">
+  <h2>Objetos</h2>
+  <div class="box">
+      <ul>
+      <li>Criação e manipulação de objetos em JavaScript</li>
+      <li>Definição de propriedades e métodos em objetos</li>
+      <li>
+        Utilização de objetos predefinidos em JavaScript (Date, Math, etc.)
+      </li>
+      <li>Manipulação de objetos JSON</li>
+    </ul>
+  </div>
+     <div class="box">
+    <pre>
+      <code>     
+/* OBJETOS {} (const) Objetos são variáveis com muitos valores dentro. 
+Os valores dentro de um objeto são chamados de propriedades.
+Os objetos podem ter métodos.
+Um método é uma função dentro de uma propriedade.
+*/
+// Exemplo 01: Objeto Literal
+function exemploObjetoLiteral() {
+  const carro = {
+    marca: "Ford",
+    modelo: "Ka",
+    ano: 2015,
+    placa: "ABC-1234",
+    buzina: function () {
+      alert("Bii");
+    },
+    completo: function () {
+      return "A marca é " + this.marca + " e o modelo é: " + this.modelo;
+      // 'this' refere-se ao objeto 'carro', permitindo o acesso às propriedades 'marca' e 'modelo'
+    },
+  };
+  console.log(carro.completo()); // Saída : A marca é Ford e o modelo é: Ka
+}
+exemploObjetoLiteral();
+      </code>
+    </pre>
+    <h3>Objeto com Método</h3>
+    <pre>
+      <code>
+// Exemplo 02: Objeto com Método
+function exemploObjetoComMetodo() {
+  const produto = {
+    nome: "caneta",
+    qtd: 10,
+    comprar: function (n) {
+      console.log(this);
+      if (n > this.qtd) {
+        return "Quantidade não disponível";
+      }
+      this.qtd -= n;
+      // 'this' refere-se ao objeto 'produto', permitindo o acesso à propriedade 'qtd'
+    },
+  };
+  produto.comprar(2); 
+  console.log(produto);
+// { nome: 'caneta', qtd: 10, comprar: [Function: comprar] }
+// { nome: 'caneta', qtd: 8, comprar: [Function: comprar] }
+}
+exemploObjetoComMetodo();
+      </code>
+    </pre>
+    <h3>Objeto simples</h3>
+    <pre>
+      <code>
+function exemploObjetoSimples() {
+  const pessoa = new Object();
+  pessoa.nome = "Matheus";
+  pessoa.idade = 100;
+  console.log(pessoa); // { nome: 'Matheus', idade: 100 }
+  console.log(pessoa.nome); // Matheus
+  console.log(pessoa.idade); // 100
+}
+exemploObjetoSimples();
+      </code>
+    </pre>
+    <h3>Sintaxe literal de objeto</h3>
+    <pre>
+      <code>
+function exemploSintaxeLiteralObjeto() {
+  let pessoa1 = {
+    nome: "Matheus",
+    idade: 100,
+    profissao: "Pogramador",
+  };
+  console.log(pessoa1.nome); // Matheus
+  console.log(pessoa1.idade); // 100
+  console.log(pessoa1.profissao); // Programador
+}
+exemploSintaxeLiteralObjeto();
+      </code>
+    </pre>
+    <h3>Loop for...in</h3>
+    <pre>
+      <code>
+function exemploLoopForIn() {
+  const pessoa = {
+    nome: "Maria",
+    idade: 28,
+    email: "maria@teste.net",
+  };
+
+  console.log(pessoa); // { nome: 'Maria', idade: 28, email: 'maria@teste.net' }
+
+  for (let prop in pessoa) {
+    console.log(prop);
+    console.log(pessoa[prop]);
+  }
+  // nome
+  // Maria
+  // idade
+  // 28
+  // email
+  // maria@teste.net
+}
+exemploLoopForIn();
+      </code>
+    </pre>
+    <h3>Objeto com propriedades e métodos</h3>
+    <pre>
+      <code>
+// Exemplo 06: Objeto com propriedades e métodos
+function exemploObjetoPropriedadesMetodos() {
+  const pessoa = {
+    nome: "Matheus",
+    idade: 100,
+    profissao: "Programador",
+    ola: function () {
+      console.log(
+        "Olá, meu nome é " + this.nome + " e tenho " + this.idade + " anos."
+      );
+      // 'this' refere-se ao objeto 'pessoa', permitindo o acesso às propriedades 'nome' e 'idade'
+    },
+    mudarProfissao: function (novaProfissao) {
+      this.profissao = novaProfissao;
+      console.log("A profissão foi alterada para " + novaProfissao);
+      // 'this' refere-se ao objeto 'pessoa', permitindo a atualização da propriedade 'profissao'
+    },
+  };
+
+  pessoa.ola(); // Olá, meu nome é Matheus e tenho 25 anos.
+  pessoa.mudarProfissao("Engenheiro de Software"); // A profissão foi alterada para Engenheiro de Software
+}
+exemploObjetoPropriedadesMetodos();
+      </code>
+    </pre>
+    <h3>Acesso a propriedades de objetos</h3>
+    <pre>
+      <code>
+function exemploAcessoPropriedadesObjetos() {
+  const pessoa = {
+    nome: "Maria",
+    idade: 30,
+    endereco: {
+    rua: "Rua Principal",
+    numero: 123,
+    cidade: "São Paulo",
+    },
+  };
+  console.log(pessoa.nome); // Maria
+  console.log(pessoa.endereco.cidade); // São Paulo
+}
+exemploAcessoPropriedadesObjetos();
+      </code>
+    </pre>
+    <h3>Adição e remoção de propriedades de objetos</h3>
+    <pre>
+      <code>
+function exemploAdicaoRemocaoPropriedadesObjetos() {
+  const pessoa = {
+    nome: "Matheus",
+    idade: 25,
+  };
+
+  pessoa.profissao = "Programador"; // Adiciona uma nova propriedade(profissao)
+  console.log(pessoa); // { nome: 'Matheus', idade: 25, profissao: 'Programador' }
+
+  delete pessoa.idade; // Remove uma propriedade existente(idade)
+  console.log(pessoa); // { nome: 'Matheus', profissao: 'Programador' }
+}
+exemploAdicaoRemocaoPropriedadesObjetos();
+      </code>
+    </pre>
+  </div>
+  
+<script src="/prism/prism.js"></script>
+
+
+</body>
+</html>

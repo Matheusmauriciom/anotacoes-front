@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia CSS</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-css">
+
+  <div class="box">
+    <h2>:root (elemento raiz)</h2>
+    <pre>
+<code>
+:root {
+/* Variáveis para cores */
+--color-dark: rgb(60, 60, 60);
+--color-light: #e9e0e0;}
+
+/* Variáveis de fonte para títulos */
+--font-title: 'Roboto', sans-serif;
+
+/* Variáveis de fonte para sub-títulos */
+--font-sub: 'Open Sans', sans-serif;
+
+/* Variáveis de fonte para parágrafos */
+--font-size-p: 1.6rem;
+--font-weight-p: normal;
+--font-line-p: 1.6;
+
+font-size: 62.5%;
+</code>
+  Dessa forma, eu posso utilizar a variável definida em qualquer parte do CSS.
+     </pre>
+</div>
+
+<!-- BEM -->
+<div class="box">
+  <h2>BEM</h2>
+<pre class="language-html">
+ <code>
+&lt;header class="header"&gt;
+   &lt;nav class="header__nav"&gt;
+     &lt;ul class="header__nav-list"&gt;
+       &lt;li class="header__nav-list-item"&gt;Link 1&lt;/li&gt;
+       &lt;li class="header__nav-list-item"&gt;&lt;a href="#secao2"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+       &lt;li class="header__nav-list-item header__nav-list-item--active"&gt;Link 3&lt;/li&gt;
+       &lt;li class="header__nav-list-item"&gt;Link 4&lt;/li&gt;
+     &lt;/ul&gt;
+   &lt;/nav&gt;
+ &lt;/header&gt;</code>
+</pre>
+<!-- MENU -->
+  <pre class="language-html"><code>//Exemplo Menu
+&lt;nav class="menu"&gt; 
+  &lt;ul class="menu__list"&gt;
+    &lt;li class="menu__list-item"&gt;Item 1&lt;/li&gt;
+    &lt;li class="menu__list-item menu__list-item--active"&gt;Item 2&lt;/li&gt;
+    &lt;li class="menu__list-item"&gt;Item 3&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+<!-- CARD -->
+<pre class="language-html">
+<code>  //Exemplo card
+&lt;nav class="menu"&gt;
+  &lt;ul class="menu__list"&gt;
+    &lt;li class="menu__list-item"&gt;Item 1&lt;/li&gt;
+    &lt;li class="menu__list-item menu__list-item--active"&gt;Item 2&lt;/li&gt;
+    &lt;li class="menu__list-item"&gt;Item 3&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+</div>
+</div>
+
+    <!-- JS -->
+    <script src="../prism/prism.js"></script>
+    <script type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="/JS/style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-javascript">
+ <h2>Introdução</h2>
+
+ <div class="box">
+  <ul>
+      <li>Criação e invocação de funções em JavaScript</li>
+      <li>Passagem de parâmetros e retorno de valores em funções</li>
+      <li>Escopo de variáveis em funções</li>
+      <li>Funções anônimas e funções de callback</li>
+      <li>
+        Criação e utilização de funções para modularizar o código e reutilizar a
+        lógica
+      </li>
+      <li>Trabalho com parâmetros e argumentos em funções</li>
+      <li>
+        Utilização de funções anônimas e funções de seta (arrow functions)
+      </li>
+    </ul>
+ </div>
+
+  <div class="box">
+    <h2>Função</h2>
+    <pre>
+      <code >
+    // Escopo de Bloco: (recomendado)
+function exibirNomeBloco() {
+  let nomeBloco = "Matheus";
+  console.log(nomeBloco); 
+} 
+exibirNomeBloco(); 
+
+   // Função com parâmetro
+function parametro(nome) {
+  console.log(`Olá ${nome} !`);
+  }
+  parametro("Matheus") 
+
+  // arrow function
+const arrow = (nome) => {
+  console.log(`Olá ${nome} !`);
+  };
+arrow("Matheus"); 
+      </code>
+    </pre>
+    <h3>Retorno</h3>
+    <pre>
+      <code>
+  //simples
+function somar(a, b) {
+    return a + b;
+  }
+  let resultado = somar(2, 3);
+  console.log(resultado); // 5
+
+    //retorno condicional
+function obterMaiorNumero(a, b) {
+    if (a > b) {
+      return a;
+    } else {
+      return b;
+    }
+  }
+  let maiorNumero = obterMaiorNumero(7, 4);
+  console.log(maiorNumero); // 7
+
+  //retorno objetos
+function criarPessoa(nome, idade) {
+    return {
+      nome: nome,
+      idade: idade
+    };
+  }
+  let pessoa = criarPessoa("Matheus", 25);
+  console.log(pessoa); // Saida: { nome: "Matheus", idade: 25 }
+
+// retorno de arrays
+function obterNumerosPares(n) {
+  let numerosPares = [];
+    for (var i = 0; i <= n; i++) {
+      if (i % 2 === 0) {
+        numerosPares.push(i);
+      }
+    }
+    return numerosPares;
+  }
+  let pares = obterNumerosPares(10);
+  console.log(pares); // Saida: [0, 2, 4, 6, 8, 10]
+
+      </code>
+    </pre>
+  </div>
+
+  <div class="box">
+    <h2>callbacks !</h2>
+    <p>um callback é uma função que é passada como argumento para outra função e é executada posteriormente, geralmente quando um determinado evento ocorre ou quando um processo assíncrono é concluído. O objetivo principal de um callback é permitir a execução de código após uma determinada tarefa ter sido concluída.</p>
+    <code>function executarDepoisDoTempo(callback, tempo) {
+  setTimeout(callback, tempo);
+}
+</code>
+<pre>
+  <code>
+function meuCallback() {
+  console.log('Callback executado!');
+}
+
+executarDepoisDoTempo(meuCallback, 2000);
+
+  </code>
+</pre>
+<p>Callbacks também são amplamente utilizados em JavaScript para lidar com processos assíncronos, como solicitações de rede. Por exemplo, ao fazer uma solicitação AJAX usando a API fetch, você pode fornecer um callback para ser executado quando a resposta da solicitação estiver disponível:</p>
+<pre>
+  <code>
+    fetch('https://api.example.com/data')
+  .then(function(response) {
+    // Callback executado quando a resposta é recebida
+    return response.json();
+  })
+  .then(function(data) {
+    // Callback executado quando os dados JSON são processados
+    console.log(data);
+  })
+  .catch(function(error) {
+    // Callback executado em caso de erro
+    console.error('Erro:', error);
+  });
+
+  </code>
+</pre>
+  </div>
+  
+  </div>
+<script src="/prism/prism.js"></script>
+
+
+</body>
+</html>

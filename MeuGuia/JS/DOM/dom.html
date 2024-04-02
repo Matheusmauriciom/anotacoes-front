@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia JS</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="/JS/style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-javascript">
+
+  <!-- DOM (document object model) -->
+  <h2>DOM (document object model)</h2>
+
+  <div class="box">
+    <ul>
+      <li>Acesso e manipulação de elementos do HTML usando JavaScript</li>
+      <li>Modificação de atributos, estilos e conteúdo de elementos</li>
+      <li>Manipulação de eventos do DOM, como cliques e teclas pressionadas</li>
+      <li>
+        Manipulação dos elementos da página utilizando o Document Object Model
+        (DOM)
+      </li>
+      <li>Criação e remoção de elementos dinamicamente no DOM</li>
+      <li>Seleção de elementos por ID, classe, tag name e outros seletores</li>
+      <li>Adição, remoção e modificação de elementos do DOM</li>
+    </ul>
+  </div>
+
+
+<div class="box">
+    
+    <p>Uma <code>API</code> disponibilizada nos browser que permite editar o que é mostrado na tela. Ao manipular o DOM eu manipulo oque é visivel na tela.</p>
+    <p>próprio objeto</p>
+    <p><code>document.getElementById("MyElement") </code></p>
+    <p><code>document.querySelector("#myElement")</code></p>
+    <p>indice do elemento <code>[]</code></p>
+    <p><code>document.querySelectorAll(".myclass")</code></p>
+    <p> <code>getElementsByClassName('myClass')</code></p>
+    <p><code>document.getElementsByTagName('p')</code></p>
+    </div>
+ 
+    <!-- document.getElementById() -->
+    <div class="box">
+    <h3>document.getElementById()</h3>
+    <p>O método <code>getElementById()</code> retorna um único elemento que possui o atributo "id" correspondente ao valor fornecido como argumento.</p>
+    <pre>
+      <code>
+      const element = document.getElementById('myElement')
+      </code>
+      <code class="language-html">&lt;h1 id="myElement"&gt;Matheus Mauricio&lt;/h1&gt</code>
+      </pre>
+
+      <!-- document.querySelector -->
+      <h3>document.querySelector</h3>
+      <p>O método <code>querySelector()</code> retorna o primeiro elemento que corresponde ao seletor <code>CSS</code> especificado como argumento.</p>
+      <pre>
+        <code>
+          document.querySelector(#myElement)
+        </code>
+         <code class="language-html">&lt;h1 id="myElement"&gt;Matheus Mauricio&lt;/h1&gt</code>
+      </pre>
+      </pre>
+</div>
+
+ <!-- document.querySelectorAll() -->
+<div class="box">
+
+       <h3
+       >document.querySelectorAll()</h3>
+        <p>O método <code>querySelectorAll()</code> retorna uma NodeList contendo todos os elementos que correspondem ao seletor CSS especificado como argumento.</p>
+        <pre>
+          <code>
+            document.querySelectorAll(".myClass")[0]
+          </code>
+        </pre>
+
+          <!-- getElementsByClassName() -->
+           <h3>getElementsByClassName()</h3>
+      <p>O método <code>getElementsByClassName()</code>retorna uma coleção de elementos que possuem a classe CSS correspondente ao valor fornecido como argumento</p>
+      <pre>
+        <code>
+          //Passar o indice []
+          var elements = document.getElementsByClassName('myClass')[0,1,2];
+        </code>
+        <code class="language-html">&lt;p class="myClass"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p> //[0]</code>
+        <code class="language-html">&lt;p class="myClass">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta quas.&lt;/p> //[1]</code>
+        <code class="language-html">&lt;p class="myClass"> Aspernatur quisquam unde nesciunt, odio atque eligendi modi amet facere.&lt;/p> //[2]</code>
+        </pre>
+</div>
+
+<div class="box">
+  <h2>Propriedades</h2>
+ <p>
+   <code>textContent</code> lida apenas com texto simples, enquanto <code>innerText</code> interpreta tags HTML, mas não exibe elementos ocultos. Já <code>innerHTML</code> interpreta e renderiza o conteúdo HTML completo de um elemento
+ </p>
+
+  <!-- Textcontent -->
+  <h3>Textcontent</h3>
+  <p> A propriedade <code>textContent</code> é usada para obter ou definir o texto puro de um elemento, sem interpretar ou renderizar tags HTML dentro dele. </p>
+  <pre>
+    <code>
+var elemento = document.getElementById('meuElemento');
+var texto = elemento.textContent; // Obtém o texto do elemento
+elemento.textContent = 'Novo texto'; // Define um novo texto para o elemento
+    </code>
+  </pre>
+
+  <!-- innerText -->
+  <h3>InnerText</h3>
+  <p>A propriedade <code>innerText</code> é semelhante à <code>textContent</code>, mas tem uma diferença importante. Ela interpreta e renderiza as tags HTML, mas não exibe elementos ocultos por CSS. Isso significa que se um elemento estiver definido como <code>display: none</code> no CSS, o innerText não o exibirá</p>
+  <pre>
+    <code>
+var elemento = document.getElementById('meuElemento');
+var texto = elemento.innerText; // Obtém o texto interpretado do elemento
+elemento.innerText = 'Novo texto'; // Define um novo texto para o elemento
+    </code>
+  </pre>
+
+  <!-- innerHTML -->
+  <h3>innerHTML</h3>
+  <p>A propriedade <code>innerHTML</code> é usada para obter ou definir o conteúdo HTML de um elemento, incluindo todas as tags HTML contidas nele. Isso permite que você insira ou modifique elementos HTML, além de texto simples. No entanto, tenha cuidado ao usar essa propriedade, pois ela pode expor seu código a vulnerabilidades de segurança, como ataques de script entre sites (XSS). Portanto, certifique-se de sanitizar ou validar o conteúdo antes de inseri-lo no innerHTML</p>
+  <pre>
+    <code>
+var elemento = document.getElementById('meuElemento');
+var conteudoHTML = elemento.innerHTML; // Obtém o conteúdo HTML do elemento
+elemento.innerHTML = '<h1>Novo conteúdo</h1>'; // Define um novo conteúdo HTML para o elemento
+    </code>
+  </pre>
+
+  <!-- .value -->
+  <h3>.value</h3>
+  <p>É usada para obter o valor de um campo de formulário em JavaScript. Ela é uma propriedade específica para campos de formulário, como <code>input</code> <code>select</code> e <code>textarea</code>, e permite acessar o valor inserido ou selecionado pelo usuário.</p>
+  <pre>
+    <code>
+var campo = document.getElementById('meuCampo'); // Substitua 'meuCampo' pelo ID do seu campo de formulário
+var valor = campo.value; // Obtém o valor do campo
+console.log(valor); // Exibe o valor do campo no console
+    </code>
+  </pre>
+</div>
+
+<div class="box">
+  <h2>Exemplos</h2>
+   <!-- Exemplo email -->
+  <h3>Exemplo cadastro email</h3>
+  <p>quando o usuário preenche o campo de e-mail e clica no botão "Enviar", a função <code>cadastrarEmail()</code> é acionada, obtendo o valor do e-mail digitado e exibindo uma mensagem de feedback na div "newsletterFeedback" informando que o e-mail foi cadastrado com sucesso.</p>
+  <pre class="language-html"><code>&lt;label for="txtEmail"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="txtEmail" autocomplete="off"/&gt;
+
+&lt;button onclick="cadastrarEmail()" id="btn"&gt;Enviar&lt;/button&gt;
+&lt;div id="newsletterFeedback"&gt; &lt;/div&gt;</code></pre>
+<pre>
+  <code>  
+// formulario
+const txtEmail = document.getElementById("txtEmail")
+const msg = document.getElementById("newsletterFeedback");
+
+//funcao button
+function cadastrarEmail (){
+let email = txtEmail.value;
+msg.innerHTML = `o email ${email} foi cadastrado com sucesso`
+}
+  </code>
+</pre>
+
+<!-- Exemplo 2 -->
+<h3>Habilitar ou desabilitar um input</h3>
+<p>O campo de entrada de e-mail está desabilitado (disabled) e exibe o valor "matheus@server.com". </p>
+<p>Quando o botão é clicado, a função <code>editarEmail()</code> é executada, habilitando o campo de entrada e dando foco a ele, permitindo ao usuário editar o valor.</p>
+<p>Quando o campo perde o foco, a função <code>disableEmail()</code> é chamada, desabilitando novamente o campo de entrada e tornando-o não editável.</p>
+<pre class="language-html"><code>
+&lt;label for="txtEmail"&gt;Email:&lt;/label&gt;
+&lt;input
+  type="email"
+  id="txtEmail"
+  autocomplete="off"
+  disabled
+  value="matheus@server.com"
+  onblur="disableEmail()"
+/&gt;
+&lt;button onclick="editarEmail()" id="btn"&gt;&lt;/button&gt;
+</code></pre>
+<pre>
+  <code>
+const txtEmail = document.getElementById("txtEmail")
+function editarEmail() {
+    txtEmail.disabled = false
+    txtEmail.focus()
+}
+
+function disableEmail(){
+    txtEmail.disabled= true
+}    
+  </code>
+</pre>
+
+<!-- enableOrDisableButton -->
+<h3>Manipulação da propriedade <code>disabled</code> para habilitar ou desabilitar um botão com base no estado do checkbox</h3>
+<pre class="language-html"><code>
+&lt;input type="checkbox" id="contrato" onchange="enableOrDisableButton()" /&gt;
+&lt;label for="contrato"&gt;Li e aceito o seguinte contrato&lt;/label&gt;
+&lt;textarea name="" id="" cols="30" rows="10" readonly&gt;
+  Este contrato nos dá direito à ...
+&lt;/textarea&gt;
+&lt;input id="enable" type="submit" value="cadastrar" disabled /&gt;
+</code></pre>
+<pre>
+  <code>
+ function enableOrDisableButton() {
+const checkbox = document.getElementById("contrato");
+const enable = document.getElementById("enable");
+
+if (checkbox.checked) {
+enable.disabled = false;
+} else {
+enable.disabled = true;
+}
+ } 
+
+  /*enable.disabled = !checkbox.checked;
+ operador de negação (!) para inverter o valor do checkbox.checked, e o resultado é atribuído à propriedade disabled do botão.*/
+ 
+  </code>
+</pre>
+</div>
+
+<!-- DOM PARTE 2 -->
+<div class="box">
+  <h2>DOM parte 2</h2>
+
+</div>
+
+
+<script src="/prism/prism.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia CSS</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-css">
+<h2>Menu</h2>
+<div class="box">
+    <h3>Side-bar</h3>
+    <ul>
+        <li>Criação de um menu de barra lateral responsivo</li>
+        <li>Utilização de técnicas de posicionamento e transições para criar uma experiência interativa</li>
+        <li>Adição de animações e efeitos no menu de barra lateral</li>
+    </ul>
+</div>
+
+<div class="box">
+    <h3>Navegação de menu responsivo</h3>
+    <ul>
+        <li>Criação de um menu de navegação responsivo que se adapta a diferentes tamanhos de tela</li>
+        <li>Utilização de técnicas como menu hamburger e dropdowns</li>
+        <li>Implementação de técnicas de responsividade para melhorar a experiência do usuário em dispositivos móveis</li>
+    </ul>
+</div>
+
+<!-- Dropdown -->
+<div class="box">
+  <h2>Dropdown</h2>
+  <p>É um componente que permite exibir um menu suspenso com opções quando um elemento específico, como um botão ou link, é clicado ou passado o mouse sobre ele. É uma forma comum de fornecer uma lista de opções para os usuários selecionarem em uma interface.</p>
+  <pre>
+    <code>
+nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav li {
+      display: inline-block;
+      position: relative;
+    }
+
+    nav a {
+      display: block;
+      padding: 8px 16px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    nav .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      padding: 8px;
+      z-index: 1;
+    }
+
+    nav li:hover .dropdown-content {
+      display: block;
+    }      
+    </code>
+  </pre>
+
+    <pre class="language-html">
+    <code>
+<pre>
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;a href="#"&gt;Home&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href="#"&gt;Serviços&lt;/a&gt;
+      &lt;div class="dropdown-content"&gt;
+        &lt;a href="#"&gt;Opção 1&lt;/a&gt;
+        &lt;a href="#"&gt;Opção 2&lt;/a&gt;
+        &lt;a href="#"&gt;Opção 3&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href="#"&gt;Sobre&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</pre>
+    </code>
+  </pre>
+</div>
+
+<script src="/prism/prism.js"></script>
+</body>
+</html>

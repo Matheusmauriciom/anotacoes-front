@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia CSS</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-css">
+  <h2>Media Queries, Unidades de Medida Responsivas, Mobile-first</h2>
+
+  <div class="box">
+    <p>A capacidade de criar layouts responsivos é uma habilidade crucial, considerando a variedade de dispositivos e tamanhos de tela em uso atualmente.</p>
+  <p>Aprender a utilizar media queries e técnicas de responsividade ajudará a criar designs que se adaptam às diferentes resoluções e tamanhos de tela.</p>
+  </div>
+
+  <!-- Media Queries -->
+<div class="box">
+  <h3>Media Queries</h3>
+  <p>Entenda como usar media queries para aplicar estilos diferentes em diferentes tamanhos de tela e dispositivos. Domine a definição de breakpoints e a aplicação de estilos específicos em cada breakpoint.</p>
+  <p>Utilização de media queries para criar layouts responsivos e adaptáveis a diferentes dispositivos</p>
+  <p>Adaptação do design e estilos para telas menores e diferentes orientações</p>
+  <pre>
+    <code>
+      /* Smartphones (600px para baixo) */
+@media only screen and (max-width: 600px) {...}
+
+/* Dispositivos um pouco maiores, mas ainda pequenos (Pequenos Tablets e Smartphones + largos, 600px para cima) */
+@media only screen and (min-width: 600px) {...}
+
+/*Dispostivos Médios (Tablets deitados, 768px para cima) */
+@media only screen and (min-width: 768px) {...}
+
+/* Dispostivos Largos (laptops/desktops, 992px para cima) */
+@media only screen and (min-width: 992px) {...}
+
+/* Super Largos (Telas maiores laptops, desktops e até TVs, 1200px para cima) */
+@media only screen and (min-width: 1200px) {...}
+    </code>
+  </pre>
+</div>
+
+<!-- Unidades de Medida Responsivas -->
+<div class="box">
+<h3>Unidades de Medida Responsivas</h3>
+<p>Familiarize-se com unidades de medida responsivas, como porcentagem (%), viewport width (vw), viewport height (vh) e em (em). Essas unidades ajudam a criar layouts flexíveis e adaptáveis.</p>
+</div>
+
+
+<!-- Mobile-first -->
+<div class="box">
+    <h3> Mobile-first</h3>
+    <p>Utilização de técnicas de responsividade para melhorar a experiência do usuário em dispositivos móveis.</p>
+    <p>Adote a abordagem mobile-first ao projetar e desenvolver seus layouts, priorizando a experiência móvel e expandindo para telas maiores</p>
+    <p>Certifique-se de que seu site seja bem otimizado para dispositivos móveis.</p>
+</div>
+
+<!-- Overflow -->
+<div class="box">
+  <h2>Overflow</h2>
+  <p> É uma propriedade que controla como o conteúdo de um elemento é tratado quando excede o espaço disponível dentro desse elemento.</p>
+  <pre>
+    <code>
+.container {
+      width: 200px;
+      height: 100px;
+      border: 1px solid black;
+      overflow: scroll;
+    }
+
+    overflow: visable (padrão)
+    overflow: visible O conteúdo que excede o espaço disponível será exibido fora dos limites do elemento.    
+    overflow: hidden O conteúdo excedente é cortado e não será visível.
+    overflow: scroll Barras de rolagem serão adicionadas automaticamente ao elemento para permitir a visualização do conteúdo excedente. 
+    overflow: auto semelhante ao scroll no entanto, se o conteúdo não exceder o espaço disponível, as barras de rolagem não serão exibidas.
+    </code>
+  </pre>
+</div>
+
+<script src="/prism/prism.js"></script>
+</body>
+</html>

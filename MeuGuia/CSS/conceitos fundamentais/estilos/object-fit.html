@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia CSS</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-css">
+
+<style>
+  *{
+    box-sizing: border-box;
+  }
+  .dive{
+    width: 400px;
+    height: 300px;
+    border: solid 5px blue;
+    
+}
+img{
+    width: 100%;
+    height: 100%;
+    /* object-fit: contain; */
+    /* object-position: left; */
+}
+#fill{
+  object-fit: fill;
+}
+#contain{
+    object-fit: contain;
+}
+#cover{
+    object-fit: cover;
+}
+#none{
+    object-fit: none;
+}
+#scale-down{
+    object-fit: scale-down;
+}
+#teste{
+  width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left;
+}
+
+
+h1{
+    font-size: 66px;
+    font-weight: 900;
+    
+}
+
+.exemplo  {
+    color: white;
+    background-color: rgb(107, 107, 114);
+    background-image:
+    radial-gradient(midnightblue 9px, transparent 10px),
+    repeating-radial-gradient(midnightblue 0, midnightblue 4px, transparent 5px, transparent 20px, midnightblue 21px, midnightblue 25px, transparent 26px, transparent 50px);
+    background-size: 30px 30px, 90px 90px;
+  
+    margin-bottom: 30px;
+}
+
+
+
+#text{
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+</style>
+
+<h2>Object-fit</h2>
+
+<div class="box">
+  <p>O <code>object-fit</code> é uma propriedade do CSS que permite controlar como uma imagem ou um vídeo se encaixa dentro de seu contêiner. Ele determina o dimensionamento e o posicionamento do conteúdo visual, ajudando a controlar o layout de forma mais precisa.</p>
+</div>
+
+<div class="box">
+  <pre>
+    <code>
+      .div{
+        width: 400px;
+        height: 300px;
+        border: solid 5px blue;    
+    }
+    </code>
+  </pre>
+</div>
+
+<div class="box">
+ <p><code>object-fit: fill;</code> O conteúdo é dimensionado para preencher completamente o contêiner, podendo distorcer a proporção original da imagem ou do vídeo.</p>
+  <div class="dive">
+  <img src="/HTML/img/computador.jpg" id="fill">
+  </div>
+</div>
+
+
+ <div class="box">
+<p><code>object-fit: contain;</code> O conteúdo é dimensionado proporcionalmente para se ajustar completamente dentro do contêiner, mantendo sua proporção original. Pode haver espaços em branco ao redor do conteúdo se o contêiner tiver uma proporção diferente.</p>
+  <div class="dive">
+      <img src="/HTML/img/computador.jpg" alt="" id="contain">
+  </div>
+ </div>
+  
+  
+ <div class="box">
+<p><code>object-fit: cover;</code> O conteúdo é dimensionado proporcionalmente para cobrir completamente o contêiner, mantendo sua proporção original. Pode haver um corte do conteúdo se o contêiner tiver uma proporção diferente.</p>
+  <div class="dive">
+      <img src="/HTML/img/computador.jpg" alt="" id="cover">
+  </div>
+ </div>
+  
+<div class="box">
+<p><code>object-fit: none;</code> O conteúdo mantém sua proporção original e não é dimensionado de forma alguma. Ele pode transbordar do contêiner, se necessário.</p>
+  <div class="dive">
+      <img src="/HTML/img/computador.jpg" alt="" id="none">
+  </div>
+</div>
+  
+
+  <div class="box">
+<p><code>object-fit: scale-down</code> O conteúdo é dimensionado para caber no contêiner, mas se o conteúdo for menor que o contêiner, ele será dimensionado como none. Caso contrário, ele será dimensionado como contain.</p>
+    <div class="dive">
+        <img src="/HTML/img/computador.jpg"alt="" id="scale-down">
+    </div>
+  </div>
+ 
+  
+  <div class="box">
+    <code>teste</code>
+    <div class="dive">
+        <img src="/HTML/img/computador.jpg"alt="" id="teste">
+    </div>
+    <pre>
+      <code>
+        #teste{
+          width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: left;
+        }
+      </code>
+    </pre>
+  </div>
+
+
+  <h2>Object Position</h2>
+<div class="box">
+  <pre>
+    <code>
+      .exemplo  {
+        color: white;
+        background-color: rgb(107, 107, 114);
+        background-image:
+        radial-gradient(midnightblue 9px, transparent 10px),
+        repeating-radial-gradient(midnightblue 0, midnightblue 4px, transparent 5px, transparent 20px, midnightblue 21px, midnightblue 25px, transparent 26px, transparent 50px);
+        background-size: 30px 30px, 90px 90px;
+      
+        margin-bottom: 30px;
+    }
+    </code>
+  </pre>
+</div>
+  <div class="box">
+    <a href="https://projects.verou.me/css3patterns/" target="_blank">Efeitos</a>
+    <div class="exemplo  dive">
+      <h1>Matheus Mauricio</h1>
+  </div>
+  
+  <div class="exemplo dive" id="text">
+      <h1>Matheus Mauricio</h1>
+  </div>
+  <pre>
+    <code>
+      #text{
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    </code>
+  </pre>
+  </div>
+
+<script src="/prism/prism.js"></script>
+</body>
+</html>

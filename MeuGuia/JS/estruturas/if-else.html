@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css" />
+    <meta name="author" content="Matheus Mauricio" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia JS</title>
+    <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/prism/prism.css" />
+    <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="language-javascript">
+    <h2>Estrutura decisão</h2>
+    <div class="box">
+<ul>
+      <li>
+        Utilização de condicionais (if/else) para tomar decisões em JavaScript
+      </li>
+      <li>Utilização de laços (for, while) para repetir ações</li>
+      <li>Utilização da instrução switch para avaliar múltiplas condições</li>
+    </ul>
+    </div>
+    <div class="box">
+      <h3>If /else if/ else</h3>
+      <pre>
+            <code>
+if (condicao1) {
+  // Bloco de código a ser executado se a condição1 for verdadeira
+} else if (condicao2) {
+  // Bloco de código a ser executado se a condição2 for verdadeira
+} else {
+  // Bloco de código a ser executado se nenhuma das condições anteriores for verdadeira
+}
+
+//Exemplo calculadora IMC
+function calcularImc(peso, altura) {
+  if (typeof peso !== "number" || typeof altura !== "number") {
+    throw Error("Entrada inválida");
+  }
+  let total = peso / (altura * altura);
+
+  if (total <= 16.9) {
+    return "Muito abaixo do peso";
+  } else if (total <= 18.4) {
+    return "Abaixo do peso";
+  } else if (total <= 24.9) {
+    return "Peso normal";
+  } else if (total <= 29.9) {
+    return "Acima do peso";
+  } else if (total <= 34.9) {
+    return "Obesidade Grau I";
+  } else if (total <= 40) {
+    return "Obesidade Grau II";
+  } else {
+    return "Obesidade Grau III";
+  }
+}
+
+let imc = calcularImc(75, 1.75);
+console.log(imc);
+            </code>
+        </pre>
+    </div>
+
+   <div class="box">
+      <h3>Operador ternário</h3>
+      <pre>
+        <code>
+//Se a condição for verdadeira, a expressão1 será executada, caso contrário, a expressão2 será executada.
+
+ condicao ? valorSeVerdadeiro : valorSeFalso;
+    
+let idadeVotar = 15;
+eleitor = idadeVotar < 16 ? "Não Eleietor" : "Sim, eleitor";
+console.log(eleitor);
+
+//
+let idade = 71;
+eleitorA =
+  idade < 16
+    ? "Não eleitor"
+    : idade >= 16 && idade < 18
+    ? "Eleitor com restrições"
+    : idade >= 18 && idade < 70
+    ? "Eleitor regular"
+    : "Eleitor acima de 70 anos";
+
+console.log(eleitorA);
+        </code>
+    </pre>
+    </div>
+
+    <div class="box">
+      <h3>Switch</h3>
+      <pre>
+    <code>
+ switch (expressao) {
+  case valor1:
+    // Bloco de código a ser executado se a expressao for igual a valor1
+    break;
+  case valor2:
+    // Bloco de código a ser executado se a expressao for igual a valor2
+    break;
+  default:
+    // Bloco de código a ser executado se nenhum dos casos anteriores for atendido
+    break;
+}
+
+let dia = ""
+switch(diaSemana){
+    case 0:
+        dia="domingo"
+        break
+     case 1:
+        dia="segunda"
+        break
+    case 2:
+        dia="terça"
+        break
+    case 3:
+        dia="quarta"
+        break
+    case 4:
+        dia="quinta"
+        break
+    case 5:
+        dia="sexta"
+        break
+    case 6:
+        dia="sabado"
+        break
+    default:
+        dia="---"
+}
+console.log(`hoje é ${dia}`)
+    </code>
+</pre>
+    <script src="/prism/prism.js"></script>
+  </body>
+</html>

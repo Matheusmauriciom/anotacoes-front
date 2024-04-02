@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia CSS</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-css">
+    <h2>Estilização Avançada</h2>
+    <div class="box">
+     <p>Explore propriedades e técnicas avançadas de estilização, como gradients, sombras, fontes personalizadas, ajuste de texto responsivo, layouts em grade com fallback e outros recursos que podem enriquecer seus designs.</p>
+    </div>
+
+    <!-- Efeitos gradiente -->
+<div class="box">
+  <h2>Efeitos gradiente</h2>
+  <p>Existem dois tipos principais de gradientes CSS: <code>gradientes lineares</code> e <code>gradientes radiais</code>.Tanto a propriedade <code>background</code> quanto a propriedade <code>background-image</code> podem ser usadas para aplicar gradientes.</p>
+  <!-- Linear -->
+  <h3>Linear</h3>
+  <p>Um gradiente linear cria uma transição de cor ao longo de uma linha reta.Você pode definir a direção do gradiente usando, <code>to top</code> <code>to right</code> <code>to bottom right</code> entre outros. </p>
+  <pre>
+    <code>
+      /* Gradiente linear de cima para baixo  */
+.gradient-top-to-bottom {
+  background: linear-gradient(to bottom, red, blue);
+}
+    </code>
+  </pre>
+  <pre>
+    <code>
+      /* Gradiente linear da esquerda para a direita */ 
+.gradient-left-to-right {
+  background: linear-gradient(45deg to right, orange, purple);
+}
+    </code>
+  </pre>
+  <pre>
+    <code>
+      /* Gradiente linear da parte inferior esquerda para a parte superior direita */
+.gradient-bottom-left-to-top-right {
+  background: linear-gradient(to top right, green, yellow);
+}
+    </code>
+  </pre>
+  <pre>
+    <code>
+      /* Gradiente linear da parte superior esquerda para a parte inferior direita */
+.gradient-top-left-to-bottom-right {
+  background: linear-gradient(to bottom right, pink, teal);
+}
+    </code>
+  </pre>
+  <h3>Gradients Radiais</h3>
+  <p>Um gradiente radial cria uma transição de cor a partir de um ponto central para o exterior em todas as direções. Você pode especificar a forma do gradiente usando <code>circle</code> <code>ellipse</code> ou <code>farthest-corner</code></p>
+  <pre>
+    <code>
+  /* Gradiente radial circular */    
+.gradient-circle {
+  background: radial-gradient(circle, yellow, orange);
+}
+    </code>
+  </pre>
+  <pre>
+    <code>
+ /*  Gradiente radial elíptico */
+.gradient-ellipse {
+  background: radial-gradient(ellipse, cyan, purple);
+}
+    </code>
+  </pre>
+  <pre>
+    <code>
+/* Gradiente radial a partir do canto superior esquerdo */
+.gradient-corner {
+  background: radial-gradient(at top left, pink, blue);
+}
+    </code>
+  </pre>
+  <pre>
+    <code>
+ /* Gradiente radial a partir do ponto mais distante */
+.gradient-farthest {
+  background: radial-gradient(farthest-corner, red, green);
+}
+    </code>
+  </pre>
+</div>
+
+<!-- Opacity -->
+<div class="box">
+  <h2>Opacity</h2>
+  <p>Frequentemente usada em conjunto com o pseudo-seletor <code>hover</code> para criar efeitos de transparência em imagens e botões.</p>
+  <pre>
+    <code>
+    .img-opacity {
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .img-opacity:hover {
+      opacity: 0.5;
+    }
+
+    .btn-opacity {
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .btn-opacity:hover {
+      opacity: 0.7;
+    }
+    </code>
+  </pre>
+</div>
+  
+<script src="/prism/prism.js"></script>
+</body>
+</html>

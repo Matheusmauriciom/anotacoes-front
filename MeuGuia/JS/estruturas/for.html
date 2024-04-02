@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia JS</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-javascript">
+    <h2>Estruturas de repetição</h2>
+    <div class="box">
+      <ul>
+      <li>
+        Utilização de arrays para armazenar e manipular conjuntos de dados
+      </li>
+      <li>
+        Utilização de loops (for, while) para percorrer e processar elementos de
+        um array
+      </li>
+      <li>Criação e manipulação de arrays em JavaScript</li>
+      <li>
+        Utilização de métodos de array, como push, pop, splice, map, filter e
+        reduce
+      </li>
+      <li>Iteração sobre os elementos de um array usando loops</li>
+    </ul>
+    </div>
+
+    <!-- FOR -->
+  <div class="box">
+    <h3>For</h3>
+    <pre>
+      <code >
+//contagem crescente
+for(let i=0; i <= 5; i++){
+    console.log(i);
+}
+
+//contagem descrescente
+for(let i=10; i >= 1; i--){
+    console.log(i);
+}
+
+// aumentando o valor de i em 2 acada iteração
+for (let i = 0; i <= 10; i += 2) {
+  console.log(i);
+}
+      </code>
+    </pre>
+</div>
+
+  <!-- LOOP EM OBJETOS -->
+    <div class="box">
+      <h3>Loop em objetos</h3>
+      <pre>
+        <code>
+//loop em objetos
+const carro = {
+  marca: "Toyota",
+  modelo: "Corolla",
+  ano: 2022,
+};
+for (let chave in carro) {
+  console.log(chave + ": " + carro[chave]);
+}
+
+//FOR OBJETO
+const carros = ["Gol", "Corsa", "Uno", "Fiesta"];
+var tamanho = carros.length;
+
+for (let i = 0; i < tamanho; i++) {
+  console.log(carros[i] + " - ");
+}
+        </code>
+      </pre>
+    </div>
+
+    <!-- Array em objetos -->
+    <div class="box">
+          <h3>Array em objetos</h3>
+      <pre>
+        <code>
+//Loop com array de objetos
+const pessoas = [
+  { nome: 'João', idade: 25 },
+  { nome: 'Maria', idade: 30 },
+  { nome: 'Pedro', idade: 28 }
+];
+for (let pessoa of pessoas) {
+  console.log(pessoa.nome + ' tem ' + pessoa.idade + ' anos.');
+}
+
+//iteração em um array
+let frutas =["maça","banana","laranja"];
+for( let i=0; i < frutas.length; i++){
+    console.log(frutas[i]);
+}
+        </code>
+      </pre>
+    </div>
+    
+    <!-- Break / Continue -->
+    <div class="box">
+      <h3>Break / Continue</h3>
+      <pre>
+        <code>
+//continue
+for(let i =1; i <=10; i++){
+    if(i % 2 === 0){
+        continue; // pula iterações pares
+    }
+    console.log(i);
+}
+
+//break
+for(let i =1; i <=10; i++){
+    if(i  === 6){
+        break; // pula iterações pares
+    }
+    console.log(i);
+}
+        </code>
+      </pre>
+    </div>
+
+<script src="/prism/prism.js"></script>
+</body>
+</html>

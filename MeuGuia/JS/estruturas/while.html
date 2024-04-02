@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css">
+    <meta name="author" content="Matheus Mauricio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia JS</title>
+      <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/prism/prism.css">
+      <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"  rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"  rel="stylesheet" />
+</head>
+<body class="language-javascript">
+    <h2>Estrutura de repetição</h2>
+    <div class="box">
+      <ul>
+      <li>
+        Utilização de arrays para armazenar e manipular conjuntos de dados
+      </li>
+      <li>
+        Utilização de loops (for, while) para percorrer e processar elementos de
+        um array
+      </li>
+      <li>Criação e manipulação de arrays em JavaScript</li>
+      <li>
+        Utilização de métodos de array, como push, pop, splice, map, filter e
+        reduce
+      </li>
+      <li>Iteração sobre os elementos de um array usando loops</li>
+    </ul>
+    </div>
+    <div class="box">
+<h3>While</h3>
+<pre>
+    <code>
+//Exemplo 1: Imprimindo os números pares de 1 a 10:
+let num = 1;
+while (num <= 10) {
+  if (num % 2 === 0) {
+    console.log(num);
+  }
+  num++;
+}
+
+
+//Exemplo 2: Calculando o fatorial de um número:
+let number = 5;
+let factorial = 1;
+let i = 1;
+
+while (i <= number) {
+  factorial *= i;
+  i++;
+}
+console.log("O fatorial de " + number + " é: " + factorial);
+
+
+    </code>
+</pre>
+    </div>
+
+    <div class="box">
+        <h3>Do-while</h3>
+        <pre>
+            <code>
+//Exemplo 1: Imprimindo números de 1 a 5 usando 
+let i = 1;
+do {
+  console.log(i);
+  i++;
+} while (i <= 5);
+
+// Exemplo 2 (PROMPT)
+let password;
+let correctPassword = "1234";
+
+do {
+  password = prompt("Digite a senha:");
+} while (password !== correctPassword);
+
+console.log("Acesso concedido!");
+            </code>
+        </pre>
+    </div>
+ 
+
+<script src="/prism/prism.js"></script>
+</body>
+</html>

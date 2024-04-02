@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css" />
+    <meta name="author" content="Matheus Mauricio" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+    <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="/JS/style.css" />
+    <link rel="stylesheet" href="/prism/prism.css" />
+    <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="language-javascript">
+    <div class="box">
+         <!-- array -->
+      <h2>Array [ ]</h2>
+      <p>Arrays em JavaScript são utilizados para armazenar múltiplos valores em uma única variável. Eles são uma coleção ordenada de elementos, acessados por meio de índices numéricos. Diferentemente dos objetos, que utilizam propriedades com nomes específicos atribuídos aos seus valores, os arrays não possuem propriedades. Os elementos dentro de um array são identificados e acessados pela sua posição indexada, começando a partir do índice 0.</p>
+  
+    </div>
+
+    <div class="box">
+      <ul>
+      <li>
+        Utilização de arrays para armazenar e manipular conjuntos de dados
+      </li>
+      <li>
+        Utilização de loops (for, while) para percorrer e processar elementos de
+        um array
+      </li>
+      <li>Criação e manipulação de arrays em JavaScript</li>
+      <li>
+        Utilização de métodos de array, como push, pop, splice, map, filter e
+        reduce
+      </li>
+      <li>Iteração sobre os elementos de um array usando loops</li>
+    </ul>
+    </div>
+
+    <div class="box">
+   
+      <!-- Iterar sobre uma array de objetos -->
+      <h3>Iterar sobre uma array de objetos</h3>
+      <pre>
+      <code>
+    function exemploIterarArray() {
+      const pessoas = [
+        { nome: "Ana", idade: 29, cidade: "São Paulo" },
+        { nome: "Carlos", idade: 35, cidade: "Rio de Janeiro" },
+        { nome: "Eduarda", idade: 22, cidade: "Belo Horizonte" }
+      ];
+    
+      console.log(`${pessoas[0].nome} - ${pessoas[0].cidade}`); // Saída: "Ana - São Paulo"
+      console.log(pessoas[1].cidade); // Saída: "Rio de Janeiro"
+    
+      // Iteração comum
+      for (let i = 0; i < pessoas.length; i++) {
+        console.log(`Seu nome é: ${pessoas[i].nome}, ${pessoas[i].idade}, reside em ${pessoas[i].cidade}`);
+      }
+    }
+      </code>
+    </pre>
+
+      <!-- Ordenar números (sort) -->
+      <h3>Ordenar números (sort)</h3>
+      <pre>
+      <code>
+ function exemploOrdenarNumeros() {
+  const numeros = [40, 100, 2, 39, 10, 4];
+  numeros.sort(function (a, b) {
+    return a - b;
+  });
+  console.log(numeros);
+}
+exemploOrdenarNumeros(); // Saída: [2, 4, 10, 39, 40, 100]
+      </code>
+    </pre>
+      <h3>Ordenar em ordem alfabética (sort)</h3>
+      <pre>
+      <code>
+  function exemploOrdenarAlfabeticamente() {
+    const jogadores = ["Biro biro", "Ribamar", "Pelé", "Maradona", "Matheus", "Mauricio", "Teste"];
+    const ordem = jogadores.sort();
+    console.log(ordem);
+  }
+  exemploOrdenarAlfabeticamente();
+  // Saída : ['Biro biro','Maradona','Matheus','Mauricio','Pelé','Ribamar','Teste']
+      </code>
+    </pre>
+
+      <!-- Fatiar Arrays -->
+      <h3>Fatiar Arrays</h3>
+      <pre>
+      <code>
+  function exemploFatiarArrays() {
+    const jogadores = ["Biro biro", "Ribamar", "Pelé", "Maradona", "Matheus", "Mauricio", "Teste"];
+    const craques = jogadores.slice(2, 6);
+    console.log(craques);
+  }
+  exemploFatiarArrays(); // Saída : [ 'Pelé', 'Maradona', 'Matheus', 'Mauricio' ]
+      </code>
+    </pre>
+    </div>
+
+    <!-- metados array -->
+    <h2>Metodos arrays</h2>
+    <p>callback: Uma função que será executada em cada elemento do array.</p>
+    <p>elemento: O elemento atual sendo processado no array</p>
+    <p>
+      índice (opcional): O índice do elemento atual sendo processado no array.
+    </p>
+    <p>array (opcional): O array em que o método map() foi chamado.</p>
+    <p>
+      thisArg (opcional): Um valor para ser usado como this ao executar a função
+      callback.
+    </p>
+
+    <div class="box">
+      <p>
+        Esses métodos <code>every() e some()</code> são úteis para fazer
+        verificações e tomar decisões com base nos elementos de um array.
+      </p>
+
+      <!-- every -->
+      <h3>every</h3>
+      <p>
+        O método <code>every()</code> verifica se todos os elementos de um array
+        atendem a uma determinada condição. Ele retorna <code>true</code> se a
+        condição for verdadeira para todos os elementos e <code>false</code> se
+        pelo menos <strong>um elemento não atender à condição</strong>.
+      </p>
+      <pre>
+        <code>
+const arr = [1, 5 ,10, "ola", true]
+let numeros = arr.every(function (elemento){
+    return typeof elemento === "number"
+})
+
+console.log(numeros) // false         
+        </code>
+      </pre>
+
+      <!-- some -->
+      <h3>some</h3>
+      <p>
+        O método <code>some()</code> retorna <code>true</code> se a condição for
+        verdadeira para <strong>pelo menos um elemento</strong> e false se
+        nenhum elemento atender à condição.
+      </p>
+      <pre>
+        <code>
+const arr = [1, 5 ,10, "ola", true]
+let numeros = arr.some(function (elemento){
+    return typeof elemento === "number"
+})
+
+console.log(numeros) // true
+        </code>
+      </pre>
+    </div>
+
+    <div class="box">
+      <p>
+        Os métodos <code>forEach(), filter() map()</code>. São três métodos
+        muito úteis para manipulação de arrays em JavaScript.
+      </p>
+
+      <!-- foreach -->
+      <h3>forEach</h3>
+      <p>
+        O método <code>forEach()</code> é usado para executar uma função em cada
+        elemento de um array.
+        <strong>Ele não retorna um novo array, apenas itera</strong> sobre os
+        elementos existentes.
+      </p>
+      <code>array.forEach(callback(elemento, índice, array), thisArg) </code>
+      <pre>
+  <code>
+const numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach(function(number) {
+  console.log(number); //O resultado será a impressão dos números de 1 a 5.
+});
+  </code>
+</pre>
+
+      <!-- filter -->
+      <h3>filter</h3>
+      <p>
+        O método <code>filter()</code>
+        <strong>cria um novo array</strong> contendo apenas os elementos que
+        atendem a uma determinada condição. Ele retorna um array com os
+        elementos filtrados.
+      </p>
+      <code>array.filter(callback(elemento, índice, array), thisArg) </code>
+      <pre>
+  <code>
+  const numbers = [1, 2, 3, 4, 5, "a", true];
+
+const evenNumbers = numbers.filter(function (number) {
+  return number % 2 === 0;
+});
+// return typeof number === "number"; // Output: [1,2,3,4,5]
+console.log(evenNumbers); // Output: [2, 4]
+  </code>
+</pre>
+
+      <!-- map -->
+      <h3>map</h3>
+      <p>
+        O método <code>map()</code> <strong>cria um novo array</strong> com base
+        em uma transformação aplicada a cada elemento do array original. Ele
+        retorna um novo array com os elementos transformados.
+      </p>
+      <code>array.map(callback(elemento, índice, array), thisArg) </code>
+      <pre>
+  <code>
+const numbers = [1, 2, 3, 4, 5];
+
+const doubledNumbers = numbers.map(function(number) {
+  return number * 2;
+});
+
+console.log(doubledNumbers);  // Output: [2, 4, 6, 8, 10]
+  </code>
+</pre>
+    </div>
+
+    <!-- buscar elementos -->
+    <div class="box">
+      <p>
+        Os métodos
+        <code>indexOf(), lastIndexOf(), includes(), find() e findIndex()</code>,
+        <strong>são usados para buscar elementos em um array</strong>
+      </p>
+
+      <!-- indexOf -->
+      <h3>indexOf</h3>
+      <p>
+        O método <code>indexOf() </code> retorna o primeiro índice em que um
+        determinado elemento é encontrado no array. Se o elemento não estiver
+        presente, o método retorna -1.
+      </p>
+      <code>array.indexOf(elemento, indiceInicial) </code>
+      <pre>
+        <code>
+const fruits = ["apple", "banana", "orange", "apple"];
+
+console.log(fruits.indexOf("apple")); // Output: 0
+console.log(fruits.indexOf("orange")); // Output: 2
+console.log(fruits.indexOf("grape")); // Output: -1          
+        </code>
+      </pre>
+
+      <!-- lastIndexOf -->
+      <h3>lastIndexOf</h3>
+      <p>
+        O método <code>lastIndexOf()</code> é semelhante ao
+        <code>indexOf()</code>, mas retorna o último índice em que um
+        determinado elemento é encontrado no array. Novamente, se o elemento não
+        estiver presente, o método retorna -1.
+      </p>
+      <code>array.lastIndexOf(elemento, indiceInicial) </code>
+      <pre>
+  <code>
+const fruits = ['apple', 'banana', 'orange', 'apple', 'orange'];
+
+console.log(fruits.lastIndexOf('apple'));  // Output: 3
+console.log(fruits.lastIndexOf('orange'));  // Output: 4
+console.log(fruits.lastIndexOf('grape'));  // Output: -1
+
+  </code>
+</pre>
+
+      <!-- includes -->
+      <h3>includes</h3>
+      <p>
+        O método <code>includes()</code>verifica se um determinado elemento está
+        presente no array e retorna <strong>true ou false</strong> com base
+        nessa verificação.
+      </p>
+      <code>array.includes(elemento, indiceInicial) </code>
+      <pre>
+  <code>
+const fruits = ["apple", "banana", "orange", "apple"];
+
+console.log(fruits.includes("apple")); // Output: true
+console.log(fruits.includes("grape")); // Output: false
+  </code>
+</pre>
+
+      <!-- find -->
+      <h3>find</h3>
+      <p>
+        O método <code>find()</code> retorna o
+        <strong>primeiro elemento do array</strong> que satisfaz uma determinada
+        condição especificada por uma função de callback.
+      </p>
+      <code>array.find(callback(elemento, indice, array), thisArg) </code>
+      <pre>
+  <code>
+const numbers = [1, 2, 3, 4, 5];
+
+const evenNumber = numbers.find(function (number) {
+  return number > 2 ;
+});
+
+console.log(evenNumber); // Output: 3    
+  </code>
+</pre>
+
+      <!-- findIndex -->
+      <h3>findIndex</h3>
+      <p>
+        O método <code>findIndex()</code> é semelhante ao <code>find()</code>,
+        mas retorna o índice do primeiro elemento que satisfaz uma determinada
+        condição especificada por uma função de callback.
+      </p>
+      <p>
+        É especialmente útil quando você precisa encontrar o índice de um
+        elemento específico em um array.
+      </p>
+      <code>array.findIndex(callback(elemento, indice, array), thisArg) </code>
+      <pre>
+  <code>
+const fruits = ["apple", "banana", "orange"];
+
+const index = fruits.findIndex(function (fruit) {
+  return fruit === "banana";
+});
+
+console.log(index); // Output: 1, O resultado é o índice do elemento
+  </code>
+</pre>
+    </div>
+
+    <div class="box">
+      <p>
+        Os métodos <code>concat(), join() e toString()</code>, que são usados
+        para <strong>manipular e obter representações de strings</strong> a
+        partir de arrays.
+      </p>
+
+      <!-- toString -->
+      <h3>toString</h3>
+      <p>
+        O método <code>toString() </code>converte um array em uma string,
+        retornando essa string representando os elementos do array, separados
+        por vírgulas.
+      </p>
+      <code>array.toString() </code>
+      <pre>
+        <code>
+const fruits = ["apple", "banana", "orange", 3];
+
+const stringRepresentation = fruits.toString();
+console.log(stringRepresentation); // Output: 'apple,banana,orange,3'
+
+let arr1 =["a",2,3]
+console.log(typeof arr1.toString()) // Output:string         
+        </code>
+      </pre>
+
+<!-- join -->
+<h3>join</h3>
+<p>O método <code>join()</code> é usado para criar e retornar uma string que contém todos os elementos de um array, separados por um separador especificado.</p>
+<code>array.join(separador)
+</code>
+<pre>
+  <code>
+const numbers = [1, 2, 3];
+
+const joinedString = numbers.join(" - ");
+console.log(joinedString); // Output: 1 - 2 - 3    
+  </code>
+</pre>
+
+<!-- Concatenar Arrays -->
+<h3>concat</h3>
+<p>O método <code>concat()</code> é usado para mesclar dois ou mais arrays, retornando um novo array resultante da concatenação.</p>
+<code>array.concat(valor1, valor2, ..., valorN)
+</code>
+      <pre>
+      <code>
+  function exemploConcatenarArrays() {
+    const lista1 = ["arroz", "feijão", "macarrão", "leite"];
+    const lista2 = ["suco", "refrigerante", "carne"];
+    const lista3 = ["salgadinho"];
+  
+    const superlista = lista1.concat(lista2, lista3);
+    console.log(superlista);
+}
+exemploConcatenarArrays(); // Saída: [superlista]
+      </code>
+    </pre>
+    </div>
+
+   <div class="box">
+ <!-- manipular arrays -->
+    <p>Os métodos <code>push(), pop(), shift(), unshift(), slice() e splice()</code>, que são utilizados para manipular arrays em JavaScript.</p>
+
+    <!-- push -->
+    <h3>push</h3>
+    <p>O método <code>push()</code>é usado para <strong>adicionar um ou mais elementos ao final de um array.</strong> Ele modifica o array original.</p>
+    <code>array.push(elemento1, elemento2, ..., elementoN)
+</code>
+<pre>
+  <code>
+const fruits = ["apple", "banana"];
+
+fruits.push("orange", "grape");
+console.log(fruits); // Output: ['apple', 'banana', 'orange', 'grape']
+
+  </code>
+</pre>
+
+<!-- pop -->
+<h3>pop</h3>
+<p>O método <code>pop()</code> é usado para remover <strong>o último elemento de um array e retorná-lo</strong>. Ele modifica o array original.</p>
+<code>array.pop()
+</code>
+
+<pre>
+  <code>
+const fruits = ['apple', 'banana', 'orange'];
+
+const removedElement = fruits.pop();
+
+console.log(removedElement);  // Output: 'orange'
+console.log(fruits);  // Output: ['apple', 'banana']
+  </code>
+  <code>
+//recuperar o elemento "removido"    
+
+const exemplo = [1, 2, 3, 4, 5];
+
+const removedElement = exemplo.pop();
+
+console.log(removedElement); // Output: 5
+console.log(exemplo); // Output: [1, 2, 3, 4]
+  </code>
+</pre>
+
+<!-- shift -->
+<h3>shift</h3>
+<p>O método <code>shift()</code> é usado para <strong>remover o primeiro elemento de um array e retorná-lo.</strong> Ele modifica o array original.</p>
+<code>array.shift()
+</code>
+<pre>
+  <code>
+const fruits = ['apple', 'banana', 'orange'];
+
+const removedElement = fruits.shift();
+
+console.log(removedElement);  // Output: 'apple'
+console.log(fruits);  // Output: ['banana', 'orange']
+
+  </code>
+</pre>
+
+<!-- unshift -->
+<h3>unshift</h3>
+<p>O método <code>unshift()</code> é usado para <strong>adicionar um ou mais elementos no início de um array.</strong> Ele modifica o array original.</p>
+<code>array.unshift(elemento1, elemento2, ..., elementoN)
+</code>
+<pre>
+  <code>
+const fruits = ['banana', 'orange'];
+
+fruits.unshift('apple', 'grape');
+
+console.log(fruits);  // Output: ['apple', 'grape', 'banana', 'orange']
+
+  </code>
+</pre>
+
+<!-- slice -->
+<h3>slice</h3>
+<p>O método <code>slice()</code> é usado <strong>para "recortar" (shallow copy) de um subarray a partir de um array existente.</strong> Ele não modifica o array original.</p>
+<code>array.slice(inicio, fim)
+</code>
+<pre>
+  <code>
+const fruits = ['apple', 'banana', 'orange', 'grape', 'kiwi'];
+
+const subarray = fruits.slice(1, 4);
+
+console.log(subarray);  // Output: ['banana', 'orange', 'grape']
+
+  </code>
+</pre>
+
+<!-- splice -->
+<h3>splice</h3>
+<p>O método <code>splice()</code> é <strong>usado para modificar um array, removendo, substituindo ou adicionando elementos a ele.</strong> Ele modifica o array original.</p>
+<code>array.splice(inicio, quantidade, elemento1, elemento2, ..., elementoN)
+</code>
+<pre>
+  <code>
+const fruits = ['apple', 'banana', 'orange', 'grape'];
+
+fruits.splice(2, 1, 'kiwi', 'melon');
+
+console.log(fruits);  // Output: ['apple', 'banana', 'kiwi', 'melon', 'grape']
+
+  </code>
+</pre>
+
+<pre>
+  <code>
+  
+const fruits = ['apple', 'banana', 'orange', 'grape'];
+
+const removedElements = fruits.splice(1, 2);
+
+console.log(removedElements); // Output: ['banana', 'orange']
+console.log(fruits); // Output: ['apple', 'grape']
+
+fruits.splice(1, 0, ...removedElements);
+
+console.log(fruits); // Output: ['apple', 'banana', 'orange', 'grape']
+</code>
+</pre>
+
+   </div>
+
+
+<div class="box">
+  <!-- reverse -->
+<h3>reverse</h3>
+<p>O método <code>reverse()</code> é utilizado para <strong>inverter a ordem dos elementos em um array.</strong> Ele altera o array original e retorna uma referência para o array invertido.</p>
+<pre>
+  <code>
+const numbers = [1, 2, 3, 4, 5];
+numbers.reverse();
+
+console.log(numbers); // Output: [5, 4, 3, 2, 1]
+
+  </code>
+</pre>
+
+<!-- reduce -->
+<h3>reduce</h3>
+<p>O método <code>reduce() </code>é usado para <strong>reduzir os elementos de um array a um único valor.</strong> Ele executa uma função de callback em cada elemento do array, acumulando um valor resultante. O resultado final é retornado como o valor reduzido.</p>
+<pre>
+  <code>
+ const numbers = [1, 2, 3, 4];
+
+let soma = numbers.reduce(function(accumulator, value) {
+    return accumulator + value
+})
+console.log(soma)   
+  </code>
+</pre>
+
+<pre>
+  <code>
+const nomes = ["Daniel", "Maria", "Joana", "João"]
+let nomesPorOrdem = nomes.reduce(function (nomes, nomeAtual) {
+
+    /*  1-
+        nomes = {}
+        nomeAtual = "Daniel" -> primeiraLetra = nomeAtual[0] = "D"
+        return {D: 1}
+
+        2-
+        nomes = {D: 1}
+        nomeAtual = "Maria" -> primeiraLetra = "M"
+        return {D: 1, M: 1}
+
+        2-
+        nomes = {D: 1, M: 1}
+        nomeAtual = "Joana" -> primeiraLetra = "J"
+        return {D: 1, M: 1, J: 1}
+
+        3-
+        nomes = {D: 1, M: 1, J: 1}
+        nomeAtual = "João" -> primeiraLetra = "J"
+        return {D: 1, M: 1, J: 2}
+    */
+
+    let primeiraLetra = nomeAtual[0]
+    if (nomes[primeiraLetra]) {
+        nomes[primeiraLetra]++
+    } else {
+        nomes[primeiraLetra] = 1
+    }
+    return nomes
+}, {})
+
+console.log(nomesPorOrdem)    
+  </code>
+</pre>
+<pre>
+  <code>
+const numeros = [1,3,4,1,4,5,3,5,8,9]
+
+const numerosUnicos = numeros.reduce(function (numerosUnicos, numeroAtual) {
+    if (numerosUnicos.indexOf(numeroAtual)< 0){
+        numerosUnicos.push(numeroAtual)
+    }
+    return numerosUnicos
+}, []);
+console.log(numerosUnicos) // Output = [1,3,4,5,8,9]
+
+  </code>
+</pre>
+</div>
+
+<!-- spread -->
+<div class="box">
+  <h3>spread</h3>
+  <p>O operador <code>spread</code> é uma ferramenta poderosa para trabalhar com elementos iteráveis e pode facilitar a manipulação e combinação de dados de forma concisa</p>
+  <p>Ele permite que um elemento iterável, como um array ou uma string, seja expandido em lugares onde múltiplos elementos (ou argumentos) são esperados. O operador <code>spread </code> é representado por três pontos consecutivos <code>...</code>.</p>
+<pre>
+  <code>
+  //Expansao de uma array:
+
+const array1 = [1, 2, 3];
+const array2 = [...array1, 4, 5, 6];
+console.log(array2); // Output: [1, 2, 3, 4, 5, 6]
+
+ /* Nesse exemplo, o operador spread é usado para expandir os elementos do array1 em um novo array array2.
+  Isso permite combinar facilmente os elementos de vários arrays em um único array. */
+  </code>
+</pre>
+
+<pre>
+  <code>
+ //Passagem de argumentos para uma função:
+ function sum(a, b, c) {
+  return a + b + c;
+}
+
+const numbers = [1, 2, 3];
+const result = sum(...numbers);
+console.log(result); // Output: 6
+
+/* Aqui, o operador spread é utilizado para passar os elementos do numbers como argumentos para a função sum(). 
+Cada elemento é atribuído às respectivas posições dos parâmetros a, b e c, permitindo a execução da função com os valores corretos.*/
+  </code>
+</pre>
+
+<pre>
+  <code>
+//Criação de cópias de objetos:
+
+ const obj1 = { name: 'John', age: 30 };
+const obj2 = { ...obj1 };
+console.log(obj2); // Output: { name: 'John', age: 30 }
+  
+/* Nesse caso, o operador spread é usado para criar uma cópia superficial do objeto obj1 em obj2. 
+Isso significa que obj2 terá as mesmas propriedades e valores que obj1, mas não compartilhará a mesma referência de memória. */
+  </code>
+</pre>
+</div>
+
+<!-- destructuring -->
+<div class="box">
+  <h3>destructuring</h3>
+  <p>A desestruturação de array permite que você extraia os elementos de um array e os atribua a variáveis separadas. </p>
+
+<pre>
+  <code>
+const array = [1, 2, 3];
+
+// Desestruturação de array
+const [a, b, c] = array;
+
+console.log(a); // Output: 1
+console.log(b); // Output: 2
+console.log(c); // Output: 3
+  </code>
+  <code>
+const [n1, , n2] = array // , pulou o 2
+console.log(n1) // 1
+console.log(n2) // 3
+  </code>
+</pre>
+<h3>Desestruturação de Objeto</h3>
+<p>A desestruturação de objeto permite que você extraia os valores das propriedades de um objeto e os atribua a variáveis separadas. É possível utilizar nomes diferentes para as variáveis, correspondendo às propriedades do objeto. Também é possível atribuir valores padrão a variáveis caso a propriedade correspondente não exista no objeto.</p>
+<pre>
+  <code>
+    const person = { name: 'Matheus', age: 100 };
+
+// Desestruturação de objeto
+const { name, age } = person;
+
+console.log(name); // Output: 'Matheus'
+console.log(age); // Output: 100
+
+  </code>
+</pre>
+
+</div>
+
+<!-- for ...of -->
+<div class="box">
+<h3>for...of</h3>
+<p>O <code>for...of</code> é uma estrutura de <strong>loop </strong>introduzida no JavaScript que permite iterar sobre elementos iteráveis, como arrays, strings, Map, Set, entre outros. Ele fornece uma maneira mais simples e concisa de percorrer os elementos de uma coleção, em comparação com o for tradicional. </p>
+<code>for (variável of iterável) {
+  // código a ser executado para cada elemento
+}
+</code>
+<pre>
+  <code>
+const numbers = [1, 2, 3, 4, 5];
+
+for (const number of numbers) {
+  console.log(number); // Output: 1 2 3 4 5
+}
+
+  </code>
+</pre>
+
+<pre>
+  <code>
+ //O for...of também pode ser usado com strings:
+
+ const message = "Hello";
+
+for (const char of message) {
+  console.log(char);
+}
+   
+  </code>
+</pre>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <script src="/prism/prism.js"></script>
+  </body>
+</html>

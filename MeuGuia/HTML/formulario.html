@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css" />
+    <meta name="author" content="Matheus Mauricio" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia HTML</title>
+    <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../prism/prism.css" />
+    <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+<body class="language-html">
+    
+    
+<h2>Formulários e Input</h2>
+
+<div class="box">
+<p>  Construção de um formulário com campos de entrada, seleção e botões.</p>
+<p>Utilização de validação de formulário com HTML5.</p>
+<p>Incorporação de campos de seleção múltipla.</p>
+<p>Adição de campos de data e hora.</p>
+<p>Implementação de campos de pesquisa.</p>
+<p>Utilização de campos de upload de arquivo.</p>
+</div>
+
+<div class="box">   
+  <!-- formulário -->
+   <p>
+          O formulário HTML é representado pela tag de aberturaa
+        documento HTML, sendo <code class="language-html">&lt;form&gt;</code>
+      <code class="language-html">&lt;form/&gt;</code>e pode ser atribuído o atributo
+      métado <code class="uppercase">get/post</code> e o atributo <code>action</code>.</p>
+   
+   <!-- Métados Get e Post -->
+      <h3>Métados Get e Post</h3> 
+    <p>
+      Os métodos <span class="uppercase"><code>get/post</code></span> são utilizados em requisições code para enviar e
+      receber dados entre o navegador e o servidor <span class="uppercase">htpp</span>.
+    </p>
+    <p>
+      <span class="uppercase"><code>get</code></span> é utilizado para solicitar recursos e enviar dados visíveis
+      na  nunca use o <span class="uppercase"><code>get</code></span> para enviar dados confidenciais, pois esses dados
+      ficarão visíveis na <span class="uppercase">url</span>
+    </p>
+    <p>
+      <span class="uppercase"><code>post</code></span> é utilizado para enviar dados de forma oculta e mais segura, pois os
+      dados são enviados no corpo da requisição <span class="uppercase">htpp</span>, não ficando visíveis na
+     <span class="uppercase">url</span>
+    </p>
+    <pre><code class="language-html">&lt;form action="action.php" method="get"&gt;&lt;/form&gt;
+&lt;form action="action.php" method="post"&gt;&lt;/form&gt;</code></pre>
+ <p>
+      <code>action</code> define o local através de uma <span class="uppercase">url</span>  ao qual serão
+      enviados todos os dados recolhidos do formulário.
+    </p>
+</div>
+
+<!-- Target -->
+
+<div class="box">
+    <h3>Target</h3>
+  <p><code>&lt;target&gt;</code> Indica que o resultado do envio do formulário será exibido em uma nova janela ou aba do navegador.</p>
+    <p>Isso é útil quando preciso abrir o resultado em uma janela separada do formulário principal.</p>
+<code class="language-html">
+&lt;form action="/submit-form" method="post" target="_blank"&gt;&lt;/form&gt;</code>
+
+<!-- Enctype -->
+
+   <h3>Enctype</h3>
+    <p>O atributo <p><code>&lt;enctype&gt;</code> é usado para especificar como os dados do formulário devem ser codificados antes de serem enviados para o servidor. Ele é relevante apenas quando o método de envio do formulário é definido como  <code>&lt;" method="post"&gt;</code>Isso é necessário quando o formulário inclui um campo de arquivo input <code>&lt;input type="file"&gt;</code></p>
+    <form action="" method="post"></form>
+<pre>
+  <code>&lt;form action="/upload" method="post" enctype="multipart/form-data"&gt;
+  &lt;label for="file"&gt;Selecione um arquivo:&lt;/label&gt;
+  &lt;input type="file" id="file" name="file"&gt;
+  &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code>
+</pre>
+</div>
+
+<!-- tabela -->
+    <div class="box">
+    <h2>Controle de elementos</h2>
+    <table>
+<tr class="no-hover">
+  <th>Tipo de Controle</th>
+  <th>Elemento de Formulário</th>
+</tr>
+  <tr>
+    <td><a href="#entradas-de-texto">Entrada de texto</a></td>
+    <td><a href="#entradas-de-texto"><code>&lt;input&gt;</code></a></td> 
+  </tr>
+    <tr>
+    <td><a href="#grupo">Agrupando campo de entrada</a></td>
+    <td><a href="#grupo"><code>&lt;label&gt;,&lt;fieldset&gt;</code></a></td>
+  </tr>
+    <tr>
+    <td><a href="#file">File Select boxes</a></td>
+    <td><a href="#file"><code>&lt;input type="file"&gt;</code></a></td>
+  </tr>
+  <tr>
+    <td><a href="#check-boxes">Checkboxes e Radio</a></td>
+    <td><a href="#check-boxes"><code>&lt;input type ="checkbox"&gt; &lt;input type="radio"&gt;</code></a></td>
+  </tr>
+    <tr>
+    <td><a href="#click">Clickable Buttons</a></td>
+    <td><a href="#click"><code>&lt;button&gt;</code></a></td>
+  </tr>
+  <tr>
+    <td><a href="#select">Select e Option</a></td>
+    <td><a href="#select"><code>&lt;select&gt;&lt;option&gt;</code></a></td>
+  </tr>
+  <tr>
+    <td><a href="#data">Datalist</a></td>
+    <td><a href="#data"><code>&lt;datalist&gt;</code></a></td>
+  </tr>
+   <tr>
+    <td><a href="#outros">Outros</a></td>
+    <td><a href="#outros"><code>&lt;email&gt;,&lt;number&gt;,&lt;range&gt;</code></a></td>
+  </tr>
+</table>
+</div>
+
+<!-- Entradas de texto INPUT -->
+
+<div class="box">
+  <h2 id="entradas-de-texto">Input Text</h2>
+    <h3>Type text</h3>
+    <pre>
+  <code class="language-html">
+     &lt;input type="text" name="username" size="50" placeholder="não pode ter value se não o required nao pega" required&gt;
+  </code>
+</pre>
+<form action="#">
+  <label for="nome"> 
+  Nome
+    <input
+      type="text"
+      id="nome"
+      name="username"
+      size="50"
+      placeholder="não pode ter value se não o required nao pega"
+    />
+</form> <br><br>
+
+   <h3>Type Password</h3> 
+    <pre>
+   <code class="language-html">
+    &lt;input type="password" name="password" value="" placeholder="Placeholder"&gt;
+  </code>
+ </pre>
+    <label for="senha">
+      Senha:
+      <input
+        type="password"
+        name="password"
+        value=""
+        id="senha"
+        placeholder="Placeholder"
+      />
+    </label> <br><br>   
+
+    <!-- Text area -->
+
+      <h3>Text area</h3>
+        <pre>
+<code class="language-html">
+&lt;form&gt;
+   &lt;textarea rows="5" cols="50" maxlength="200" minlength="30" name="description"&gt;
+      Enter description here...
+   &lt;/textarea&gt;
+&lt;/form&gt;
+</code>
+</pre>
+    <form>
+       <textarea rows="5" cols="40" name="description">
+           Exemplo : Insira a descrição aqui...somente leitura
+       </textarea>
+    </form>
+
+</div>
+
+<!-- Agrupando campos de entrada -->
+
+ <div class="box">
+  <h2 id="grupo">Agrupando campos de entrada</h2>
+    <table>
+  <tr class="no-hover">
+    <th>Elemento</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td><code>&lt;fieldset&gt;</code></td>
+    <td>Define um grupo de campos</td>
+  </tr>
+  <tr>
+    <td><code>&lt;label&gt;</code></td>
+    <td>Define um rótulo ou legenda para um campo ou controle do formulário</td>
+  </tr>
+  <tr>
+    <td><code>&lt;output&gt;</code></td>
+    <td>Define elementos de saída para o formulário</td>
+  </tr>
+  <tr>
+    <td><code>&lt;legend&gt;</code></td>
+    <td>Define um título para o conjunto de campos</td>
+  </tr>
+</table>
+
+<!-- Label -->
+
+  <h3>Label</h3>
+  <p>O elemento <code>&lt;label&gt;</code> é usado para criar rótulos associados a elementos interativos, como campos de entrada <code>input</code> e <code>botões</code>. O rótulo em si não é interativo, mas quando um usuário clica no rótulo, o elemento associado recebe o foco ou ação.</p>
+<p>O atributo <code>for</code> é usado para vincular o rótulo a um elemento específico na página. O valor do atributo <code>for</code> deve corresponder ao valor do atributo <code class="uppercase">id</code>  do elemento que você deseja associar ao rótulo. Dessa forma, quando o usuário clicar no rótulo, o elemento correspondente será afetado.</p>
+<pre><code class="language-html">&lt;label for="nome"&gt;Nome:&lt;/label&gt;
+&lt;input type="text" id="nome"&gt;</code></pre>
+
+<p>Quando o usuário clicar no rótulo <code>nome</code> o campo de entrada será selecionado automaticamente.
+
+Além disso, o elemento <code>&lt;label&gt;</code> também pode ser aninhado dentro de outro elemento, como um <code>&lt;button&gt;</code> ou uma <code>&lt;div&gt;</code>, para criar rótulos mais complexos. Por exemplo:</p>
+<pre>
+  <code class="language-html">
+&lt;button&gt;
+  &lt;label for="idade"&gt;Clique para selecionar sua idade:&lt;/label&gt;
+&lt;/button&gt;
+&lt;input type="text" id="idade"&gt;</code>
+</pre>
+
+<button class="btn">
+  <label for="idade">Clique para selecionar sua idade:</label>
+</button>
+<input type="text" id="idade">
+
+<!-- Fieldset/ legend -->
+
+<h3>Fieldset/ legend</h3>
+  <p>
+      Ao criar um formulário,você pode querer agrupar alguns campos de entrada
+      em um grupo para ajudar a organizar o layout do formulário.Para cada
+      conjunto de campos, você pode definir uma legenda para o conjunto usando a
+    <code> &lt;legend&gt;</code>
+    </p>
+<pre>
+<code>
+&lt;form&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;titulo&lt;br&gt;&lt;/legend&gt;
+    primeiro campo&lt;br&gt;
+    &lt;input type="text"&gt;&lt;br&gt;
+    segundo campo&lt;br&gt;
+    &lt;input type="text"&gt;&lt;br&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+</code>
+</pre>
+    <form>
+      <fieldset>
+        <legend>titulo<br /></legend>
+        primeiro campo<br />
+        <input type="text" /><br />
+        segundo campo<br />
+        <input type="text" /> <br />
+      </fieldset>
+    </form>
+ </div>
+ 
+
+
+ <!-- file -->
+
+ 
+<div class="box">
+<h2 id="file">File</h2>
+<p>As entradas de arquivo permitem que os usuários selecionem um arquivo de seu sistema de arquivos local para uso com a página atual. Se usado em conjunto
+com um elemento de formulário, eles podem ser usados ​​para permitir que os usuários façam upload de arquivos para um servidor.</p>
+
+<p>O exemplo a seguir permite que os usuários usem a entrada de arquivo para selecionar um arquivo de seu sistema de arquivos e fazer upload desse arquivo para
+um script no servidor chamado upload_file.php.</p>
+
+<pre>
+<code class="language-html">
+&lt;form action="upload_file.php" method="post" enctype="multipart/form-data"&gt;
+   <span>Select file to upload:</span>
+   &lt;input type="file" name="fileSubmission" id="fileSubmission"&gt;
+   &lt;input type="submit" value="Upload your file" name="submit"&gt;
+&lt;/form&gt;
+</code>
+</pre>
+
+<h3>Multiple Files</h3>
+<p>Adicionando o atributo multiple o usuário poderá selecionar mais de um arquivo</p>
+
+<pre>
+<code class="language-html">
+&lt;input type="file" name="fileSubmission" id="fileSubmission" multiple&gt;
+</code>
+</pre>
+
+<h3>Accept Files</h3>
+<p>
+O atributo <code>accept</code> especifica os tipos de arquivos que o usuário pode selecionar. Por exemplo. .png, .gif, .jpeg.</p>
+<pre>
+<code code class="language-html">
+&lt;input type="file" name="fileSubmission" accept="image/x-png,image/gif,image/jpeg" /&gt;
+</code>
+</pre>
+
+<pre>
+  <code class="language-html">
+&lt;form&gt;
+   &lt;input type="file" name="fileupload" accept="image/*" /&gt;
+&lt;/form&gt;
+</code>
+</pre>
+    <h3>Upload de arquivos</h3>
+    <p>
+      Imagens e arquivos podem ser carregados/enviados ao servidor definindo o
+      atributo <code>enctype</code> da tag de formulário para dados de formulário/partes
+      múltiplas. enctype especifica como os dados do formulário seriam
+      codificados durante o envio ao servidor.
+    </p>
+    <pre><code class="language-html">&lt;form method="post" enctype="multipart/form-data" action="upload.php"&gt;
+  &lt;input type="file" name="pic" /&gt;
+  &lt;input type="submit" value="Upload" /&gt;
+&lt;/form&gt;</code></pre>
+</div>
+
+<!-- Checkbox and Radio -->
+
+<div class="box">
+  <h2 id="check-boxes">Checkbox and Radio</h2>
+<table>
+  <thead>
+    <tr class="no-hover">
+      <th>Atributo</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>type</code></td>
+      <td>Indica o tipo de controle de entrada. Para caixa de seleção, será definido como "checkbox". Para botões de rádio, será definido como "radio".</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td>Usado para dar um nome ao controle, que é enviado ao servidor para ser reconhecido e obter o valor selecionado.</td>
+    </tr>
+    <tr>
+      <td><code>value</code></td>
+      <td>O valor que será usado se a caixa de seleção ou o botão de rádio estiverem marcados.</td>
+    </tr>
+    <tr>
+      <td><code>checked</code></td>
+      <td>Definido como "checked" se desejar que o controle esteja selecionado por padrão.</td>
+    </tr>
+  </tbody>
+</table>
+
+  <!-- Radio -->
+<h3>Radio</h3>
+<p>Os botões de opção são usados quando, entre muitas opções, apenas uma opção precisa ser selecionada.</p>
+
+<form action="">
+  <Fieldset>
+    <legend>radio</legend>
+    <input type="radio" value="s" name="check" > Sim
+    <input type="radio" value="n" name="check" > Não
+    <input type="radio" value="n" name="check" checked> Talvez
+  </Fieldset>
+</form>
+
+<pre>
+<code class="language-html">
+&lt;input type="radio" value="s" name="check" &gt; Sim
+&lt;input type="radio" value="n" name="check" &gt; Não
+&lt;input type="radio" value="n" name="check" checked&gt; Talvez
+</code>
+</pre>
+
+<p><code>name</code> especifica o nome do grupo de botões de opção, garantindo que apenas uma opção possa ser selecionada dentro do mesmo grupo.</p>
+<p><code>value</code> define o valor associado a um botão de opção. Esse valor é enviado ao servidor quando o formulário é submetido.</p>
+<p><code>checked</code> marca um botão de opção como selecionado inicialmente quando a página é carregada. Isso garante que o botão de opção com o atributo "checked" esteja inicialmente selecionado ao visualizar o formulário.</p>
+
+<!-- Checkbox -->
+
+<h3>Checkbox</h3>
+<p>Check box são usada quando é necessário selecionar mais de uma opção.</p>
+
+<input type="checkbox" name="opcao1" value="1" checked> Opção 1
+<input type="checkbox" name="opcao2" value="2"> Opção 2
+<input type="checkbox" name="opcao3" value="3" checked> Opção 3
+
+<pre>
+<code class="language-html">
+&lt;input type="checkbox" name="opcao1" value="1" checked&gt; Opção 1
+&lt;input type="checkbox" name="opcao2" value="2"&gt; Opção 2
+&lt;input type="checkbox" name="opcao3" value="3" checked&gt; Opção 3
+</code>
+</pre>
+</div>
+
+<!-- Button -->
+
+<div class="box">
+  <h2 id="click">Button</h2>
+<p>Existem várias maneiras em HTML para criar botões clicáveis. Você também pode criar um botão clicável usando a tag input definindo seu atributo de tipo como botão. O atributo type pode assumir os seguintes valores -</p>
+<table>
+  <thead>
+    <tr class="no-hover">
+      <th>Tipo</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>submit</code></td>
+      <td>Cria um botão de envio que envia o formulário quando clicado.</td>
+    </tr>
+    <tr>
+      <td><code>reset</code></td>
+      <td>Cria um botão de redefinição que redefine os valores do formulário para seus valores iniciais quando clicado.</td>
+    </tr>
+    <tr>
+      <td><code>button</code></td>
+      <td>Cria um botão genérico sem comportamento pré-definido que é usado para acionar um script do lado do cliente quando o usuário clica nesse botão.</td>
+    </tr>
+    <tr>
+      <td><code>image</code></td>
+      <td>Cria um botão de imagem que pode ser clicado como um botão.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- Submit -->
+
+
+<button class="btn">
+  <label for="sub">Submit</label>
+  <input id="sub" type = "submit" name = "submit">
+</button>
+
+
+<button class="btn">
+  <label for="res">Reset</label>
+</button>
+<input id="res" type="reset" value="reset">
+
+
+
+
+         <input type = "button" name = "ok" value = "OK" />
+         <input type = "image" name = "imagebutton" src = "" />
+
+
+<pre>
+<code class="language-html">
+&lt;input type="submit" name="submit" value="Submit" /&gt;
+&lt;input type="reset" name="reset" value="Reset" /&gt;
+&lt;input type="button" name="ok" value="OK" /&gt;
+&lt;input type="image" name="imagebutton" src="" /&gt;
+</code>
+</pre>
+
+<!-- Hidden -->
+
+  <h3 id="hiden">Hidden</h3>
+  <p>Controles de formulário ocultos são usados para esconder dados na página e enviá-los ao servidor posteriormente. Eles não são visíveis para o usuário na página real.</p>
+<p>O <code>&lt;input type="hidden"&gt;</code> um campo de entrada oculto em um formulário, permitindo inserir valores que não são exibidos, mas são enviados quando o formulário é submetido. Isso é útil para armazenar registros de banco de dados que precisam ser atualizados após o envio do formulário.</p>
+<pre class="language-html">
+<code>
+&lt;input type="hidden" id="inputOculto" name="inputOculto" value="meuvalor"&gt;
+</code>
+</pre>
+
+<!-- Onclick -->
+
+<h3>Onclick</h3>
+<p>Os botões são normalmente usados ​​com um evento "onclick":</p>
+<input type="button" onclick="alert('hello world!')" value="Click Me">
+<button type="button" onclick="alert('hello world!')">Click Me</button>
+<pre class="language-html">
+<code>
+&lt;input type="button" onclick="alert('hello world!')" value="Click Me"&gt;
+
+&lt;button type="button" onclick="alert('hello world!')"&gt;Click Me&lt;/button&gt;
+</code>
+</pre>
+</div>
+</div>
+
+
+<!-- Select e Option -->
+
+<div class="box">
+  <h2 id="select">Select e Option</h2>
+<table>
+  <tr>
+    <th>Atributo</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td><code>name</code></td>
+    <td>Define o nome do controle que é enviado ao servidor para ser identificado e obter o valor selecionado.</td>
+  </tr>
+  <tr>
+    <td><code>size</code></td>
+    <td>Define o número de opções visíveis no menu suspenso. Se houver mais opções do que o tamanho especificado, uma barra de rolagem será exibida.</td>
+  </tr>
+  <tr>
+    <td><code>multiple</code></td>
+    <td>Se definido como "multiple", permite que o usuário selecione várias opções simultaneamente.</td>
+  </tr>
+</table>
+
+<!-- Select -->
+
+<h3>Select</h3>
+<p>O elemento <code>select</code> é usado para criar um menu suspenso, onde o usuário pode selecionar uma opção entre várias. O elemento <code>select</code> contém um ou mais elementos <code>option</code>, que representam as opções disponíveis no menu.</p>
+
+<form>
+  <label for="fruits">Escolha uma fruta:</label>
+  <select id="fruits" name="fruits">
+    <option value="apple">Maçã</option>
+    <option value="orange" selected>Laranja</option>
+    <option value="banana">Banana</option>
+    <option value="grape">Uva</option>
+  </select>
+  <input type="submit" value="Enviar">
+</form>
+
+<pre>
+<code class="language-html">
+&lt;form&gt;
+  &lt;label for="fruits"&gt;Escolha uma fruta:&lt;/label&gt;
+  &lt;select id="fruits" name="fruits"&gt; multiple
+    &lt;option value="apple"&gt;Maçã&lt;/option&gt;
+    &lt;option value="orange" selected&gt;Laranja&lt;/option&gt;
+    &lt;option value="banana"&gt;Banana&lt;/option&gt;
+    &lt;option value="grape"&gt;Uva&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;
+</code>
+</pre>
+
+<!-- Option -->
+
+<h3>Option</h3>
+<p>Você pode agrupar suas opções em um menu de seleção para fornecer um layout mais estruturado em um longo
+lista de opções usando o elemento <code>&lt;optgroup&gt;</code>. 
+A sintaxe é bem básica, basta usar o elemento com um atributo <code>label</code> para identificar o título do grupo, e
+contendo zero ou mais opções que deveriam estar dentro desse grupo.</p>
+
+<form action="">
+  <fieldset>
+    <legend>Options Grupo</legend>
+   <select name="">
+ <option value="milk">Milk</option>
+ <optgroup label="Fruits">
+ <option value="banana">Bananas</option>
+ <option value="strawberry">Strawberries</option>
+ </optgroup>
+ <optgroup label="Vegetables" disabled>
+ <option value="carrot">Carrots</option>
+ <option value="zucchini">Zucchini</option>
+ </optgroup>
+</select>
+  </fieldset>
+</form>
+
+<pre>
+<code class="language-html">
+&lt;form action=""&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Options Grupo&lt;/legend&gt;
+    &lt;select name=""&gt;
+      &lt;option value="milk"&gt;Milk&lt;/option&gt;
+      &lt;optgroup label="Fruits"&gt;
+        &lt;option value="banana"&gt;Bananas&lt;/option&gt;
+        &lt;option value="strawberry"&gt;Strawberries&lt;/option&gt;
+      &lt;/optgroup&gt;
+      &lt;optgroup label="Vegetables" disabled&gt;
+        &lt;option value="carrot"&gt;Carrots&lt;/option&gt;
+        &lt;option value="zucchini"&gt;Zucchini&lt;/option&gt;
+      &lt;/optgroup&gt;
+    &lt;/select&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+</code>
+</pre>
+
+<!-- Datalist -->
+
+<h3 id="data">Datalist</h3>
+<p>A tag datalist especifica uma lista de opções predefinidas para um elemento <code>input</code>. Ele fornece um "autocompletar"
+recurso em elementos input. Os usuários verão uma lista suspensa de opções enquanto escrevem.</p>
+
+<form action="">
+  <fieldset>
+    <legend>Data List</legend>
+    <input list="Languages">
+    <datalist id="Languages">
+ <option value="PHP">
+ <option value="Perl">
+ <option value="Python">
+ <option value="Ruby">
+ <option value="C+">
+</datalist>
+  </fieldset>
+</form>
+
+<pre>
+<code class="language-html">
+&lt;form action=""&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Data List&lt;/legend&gt;
+    &lt;input list="Languages"&gt;
+    &lt;datalist id="Languages"&gt;
+      &lt;option value="PHP"&gt;
+      &lt;option value="Perl"&gt;
+      &lt;option value="Python"&gt;
+      &lt;option value="Ruby"&gt;
+      &lt;option value="C+"&gt;
+    &lt;/datalist&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+</code>
+</pre>
+</div>
+
+<!-- Outras entradas -->
+
+<div class="box">
+  <h2 id="outros">Outras entradas</h2>
+  <h3>Email</h3>
+<label for="email"> <span>Email:</span>
+  <input type="email" name="useremail" id="email"value="seuemail@example.com">
+</label>
+<pre>
+  <code class="language-html">
+    &lt;input type="email" name="useremail" value="seuemail@example.com"&gt;
+  </code>
+</pre>
+
+<!-- Number -->
+
+<h3>Number</h3>
+<form>
+   <label for="number">
+    <span>Quantidade (entre 1 e 5):</span> <input id="number" type="number" name="quantidade" min="1" max="5"> 
+   </label>
+<pre>
+<code class="language-html">
+&lt;input type="number" name="quantidade" min="1" max="5"&gt;
+</code>
+</pre>
+
+<!-- Date -->
+
+<h3>Date</h3>
+<label for="date">
+  <input id="date" type="date" value="2023-01-01">
+</label>
+<pre>
+  <code class="language-html">
+     &lt;input type="date" value="2023-01-01"&gt;
+  </code>
+</pre>
+
+<!-- Color -->
+
+<h3>Color</h3>
+
+<form action="">
+<label for="color">
+  <input type="color" id="color" name="favcolor" value="#ff0000">
+</label>
+</form>
+<pre>
+<code class="language-html">
+&lt;input type="color" name="favcolor" value="#ff0000"&gt;
+</code>
+</pre>
+
+<!-- Tel -->
+
+<h3>Tel</h3>
+<label for="">
+  <input type="tel" value="4002-8922">
+</label>
+<pre>
+<code class="language-html">
+&lt;input type="tel" value="4002-8922"&gt;
+</code>
+</pre>
+
+<!-- Range -->
+
+<h3>Range</h3>
+
+<form>
+    <span>pouco satisfeito</span>
+    <input type="range" name="satisfacao" min="0" max="10">
+    <span>muito satisfeito</span>
+</form>
+<pre>
+<code class="language-html">
+&lt;input type="range" name="satisfacao" min="0" max="10"&gt;
+</code>
+</pre>
+
+<!-- Match a Pattern -->
+
+<h3>Match a Pattern</h3>
+<p>Para obter mais controle, use o atributo pattern para especificar qualquer expressão regular que deve ser correspondida para
+passar validação. Você também pode especificar um título, que é incluído na mensagem de validação se o campo não passar</p>
+
+<label for="">
+  <input pattern="\d*" title="Numbers only, please.">
+</label>
+<pre class="language-html">
+<code>
+&lt;input pattern="\d*" title="Numbers only, please."&gt;
+</code>
+</pre>
+ </div>
+ 
+<!-- Tag Input -->
+
+<div class="box">
+  <h2>Tag Input</h2>
+    <table>
+  <tr>
+    <th>Propriedade</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>Class</td>
+    <td>Indica a classe da entrada</td>
+  </tr>
+  <tr>
+    <td>ID</td>
+    <td>Indica o ID da entrada</td>
+  </tr>
+  <tr>
+    <td>Type</td>
+    <td>
+      Identifica o tipo de controle de entrada a ser exibido. Os valores aceitáveis são hidden, text, tel, url, email, senha, data, hora, número, intervalo, cor, caixa de seleção, rádio, arquivo, enviar, imagem, redefinir e botão. O padrão é texto se não for especificado, se o valor for inválido ou se o navegador não suportar o tipo especificado.
+    </td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Indica o nome da entrada</td>
+  </tr>
+    <tr>
+    <td>Value</td>
+    <td>Permite que o campo já contenha um valor predefinido quando a página é carregada..</td>
+      </tr>
+  <tr>
+      <tr>
+          <tr>
+    <td>Placeholder</td>
+    <td>HTML5: Uma dica para o usuário sobre o que pode ser inserido no controle. O texto do espaço reservado não deve conter retornos de carro ou avanços de linha.</td>
+  </tr>
+    <td>Required</td>
+    <td>Garante que aquele campo
+      tenha seu preenchimento obrigatório para validar e permitir o envio do
+      formulário.</td>
+  </tr>
+  <tr>
+    <td>Disabled</td>
+    <td>Valor booleano que indica que a entrada deve ser desabilitada. Os controles desabilitados não podem ser editados, não são enviados no envio do formulário e não podem receber o foco.</td>
+  </tr>
+  <tr>
+    <td>Checked</td>
+    <td>Quando o valor do atributo type é radio ou checkbox, a presença deste atributo booleano indica que o controle está selecionado por padrão; caso contrário, é ignorado.</td>
+  </tr>
+  <tr>
+    <td>Multiple</td>
+    <td>HTML5: Indica que vários arquivos ou valores podem ser passados (aplica-se apenas a entradas de tipo de arquivo e e-mail)</td>
+  </tr>
+  <tr>
+    <td>Autocomplete</td>
+    <td>HTML5: Indica se o valor do controle pode ser preenchido automaticamente pelo navegador.</td>
+  </tr>
+  <tr>
+    <td>Readonly</td>
+    <td>Valor booleano que indica que a entrada não é editável. Controles somente leitura ainda são enviados no envio do formulário, mas não receberão foco. HTML5: Este atributo é ignorado quando o valor do atributo type é definido como oculto, intervalo, cor, caixa de seleção, rádio, arquivo ou botão.</td>
+  </tr>
+    <td>Alt</td>
+    <td>Um texto alternativo para imagens, caso não sejam exibidas.</td>
+  </tr>
+  <tr>
+    <td>Autofocus</td>
+    <td>O elemento &lt;input&gt; deve obter o foco quando a página é carregada.</td>
+  </tr>
+  <tr>
+    <td>Step</td>
+    <td>O atributo step especifica os intervalos de números válidos. Funciona com os seguintes tipos de entrada: número, intervalo, data, data-hora-local, mês, hora e semana.</td>
+  </tr>
+</table>
+</div>
+
+
+     <script src="../prism/prism.js"></script>
+</body>
+</html>

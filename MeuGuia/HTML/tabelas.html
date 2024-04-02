@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta name="keywords" content="palavra chave, assuntos, html, css" />
+    <meta name="author" content="Matheus Mauricio" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia HTML</title>
+    <!-- acesso -->
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../prism/prism.css" />
+    <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+<body class="language-html">
+     <h2>Tabelas</h2>
+
+     <div class="box">
+<p>  Criação de tabelas simples com linhas e colunas</p>
+<p>Adição de cabeçalho de tabela e formatação de células</p>
+<p>Utilização de atributos de tabela, como colspan e rowspan</p>
+     </div>
+     <div class="box">
+        <p><code>&lt;table&gt;</code> inicia a tabela.</p>
+  <p><code>&lt;thead&gt;</code> define o cabeçalho. </p>
+  <p><code>&lt;tr&gt;</code> cria as linhas. </p>
+  <p><code>&lt;th&gt;</code> cria células de cabeçalho. </p>
+  <p><code>&lt;tbody&gt;</code> define o corpo.</p>
+  <p><code>&lt;td&gt</code>cria células de dados.</p>
+     </div>
+<div class="box">
+ 
+<pre><code>&lt;table&gt; 
+    &lt;thead&gt; 
+        &lt;tr&gt; 
+            &lt;th&gt;Cabeçalho 1&lt;/th&gt;
+            &lt;th&gt;Cabeçalho 2&lt;/th&gt; 
+            &lt;th&gt;Cabeçalho 3&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt; 
+        &lt;tr&gt;
+            &lt;td&gt;Dado 1&lt;/td&gt;
+            &lt;td&gt;Dado 2&lt;/td&gt; 
+            &lt;td&gt;Dado 3&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Dado 4&lt;/td&gt;
+            &lt;td&gt;Dado 5&lt;/td&gt;
+            &lt;td&gt;Dado 6&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+<table>
+    <thead>
+        <tr>
+            <th>Cabeçalho 1</th>
+            <th>Cabeçalho 2</th>
+            <th>Cabeçalho 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Dado 1</td>
+            <td>Dado 2</td>
+            <td>Dado 3</td>
+        </tr>
+        <tr>
+            <td>Dado 4</td>
+            <td>Dado 5</td>
+            <td>Dado 6</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+    
+</div>
+
+<script src="../prism/prism.js"></script>
+</body>
+</html>
